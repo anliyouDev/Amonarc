@@ -11,6 +11,13 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amonak</title>
+  <script>
+  var redirect = sessionStorage.getItem('redirect');
+  if (redirect && redirect !== '/Amonak/') {
+    sessionStorage.removeItem('redirect');
+    history.replaceState(null, null, redirect);
+  }
+</script>
   <script type="module" crossorigin src="/Amonak/assets/index-DI9egs0Y.js"></script>
   <link rel="stylesheet" crossorigin href="/Amonak/assets/index-CBG09O_E.css">
 </head>
