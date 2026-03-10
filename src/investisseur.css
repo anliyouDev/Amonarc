@@ -1,0 +1,369 @@
+
+
+.headers{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+  background:white;
+}
+.imageLogos a{
+  color: #6c4ef6;
+}
+
+.Menus {
+  display: flex;
+  gap: 40px;
+} 
+.Menus a{
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  padding-bottom: 7px;
+}
+.Menus a:hover{
+  color: 333;
+ 
+  border-bottom: 2.5px solid black;
+ 
+}
+.logins{
+  background-color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.logins:hover{
+  background-color:  #333;
+}
+.logins a{
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  gap: 10px;
+  
+}
+.investir{
+    padding: 16px 60px;
+    /* border-bottom: 1px solid #e0e0e0; */
+    /* border-top: 1px solid #e0e0e0; */
+    background-color: #F5F5F5;
+}
+.les-liens nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.liens-droite{
+    display: flex;
+    gap: 40px;
+}
+.liens-droite a{
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    
+}
+.les-liens  nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+   
+}
+.les-liens nav > a:first-child{
+    font-weight: 700;
+    font-size: 25px;
+}
+.les-liens nav a:hover{
+    text-decoration: underline;
+}
+.Investirs{
+    padding: 60px 20px;
+    align-items: center;
+}
+.Amonak{
+        align-items: center;
+        text-align: center;
+}
+.Investirs h1{
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.Investirs p{
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+
+.colonne {
+  padding: 60px 300px;
+  background: white;
+   
+}
+
+.colonne-un {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.carte-investir {
+  display: flex;
+  border-radius: 24px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  min-height: 200px;        
+  background: #f8f8f8;
+  box-shadow: 0px 0px 7px 2px rgba(145, 143, 143, 0.282);
+  margin-bottom: 25px;
+}
+
+.carte-investir-gauche {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px;            
+  min-width: 300px;         
+  max-width: 300px;
+}
+
+.carte-investir-gauche h3 {
+  font-size: 32px;          
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+}
+
+.carte-investir-gauche p {
+  font-size: 15px;
+  color: #555;
+  margin: 0 0 24px 0;
+}
+
+.carte-investir-gauche a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.carte-investir-gauche a:hover {
+  text-decoration: underline;
+}
+
+.carte-investir-droite {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  background: #eeeeff;
+  border-left: 2px solid #e4e1e1;
+  
+   
+}
+
+.carte-investir-droite img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* opacity: 0.55;             */
+ 
+}
+.coverss{
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+  font-weight: 400;
+  background-color: rgba(255, 255, 255, 0.452);
+   backdrop-filter: blur(6px);
+   
+   font-family: "Roboto", sans-serif;
+}
+
+.carte-investir-droite ul {
+  position: relative;
+  z-index: 1;
+  padding: 90px;            
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;               
+}
+
+.carte-investir-droite ul li {
+  font-size: 15px;          
+  color: #222;
+  line-height: 1.6;
+}
+
+/* .carte-investir-droite ul li::before {
+  content: "• ";
+  color: #7c3aed;
+} */
+
+.footers {
+  padding: 60px;
+  background: white;
+  text-align: center;
+}
+
+.footers p:first-child {
+  font-style: italic;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.footers-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.footers-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  color: white;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+}
+
+.footers-icons a:hover {
+  background: #333;
+}
+
+.footers p:last-child {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+.enteteMobile {
+  display: none;
+}
+
+
+.mobile{
+  display: none;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px){
+    .enteteMobile {
+    width: 100vw;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    /* border: 1px solid red; */
+    padding-left: 7vh;
+  }
+  .desktop, .tablet{
+    display: none;
+  }
+
+  .headers {
+    flex-direction: column;
+    /* gap: 16px; */
+    /* padding: 20px; */
+    text-align: center;
+    margin: 0 !important;
+  }
+
+  .imageLogos img {
+    width: 30vw !important;
+  }
+
+  .imageLogo {
+    /* border: 1px solid red; */
+  }
+  .coverss{
+    text-align: justify;
+  }
+  body {
+    padding: 0;
+    background-color: white;
+  }
+
+  .enteteMobile {
+    width: 100vw;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    /* border: 1px solid red; */
+    padding-left: 7vh;
+  }
+
+  .login a {
+    margin-left: 1vw;
+  }
+
+  .Menu {
+    display: none;
+
+  }
+
+  .MenuMobile {
+    display: flex;
+    flex-direction: row;
+    /* gap: 20px; */
+    align-items: center;
+    background-color: #F5F5F5;
+    /* border: 1px solid red; */
+    width: 100vw;
+    height: 50px;
+    /* text-align: center; */
+    justify-content: space-around;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    border-top: 1.5px solid #d9d9d9;
+    margin-top: 3vh;
+
+
+  }
+
+  .MenuMobile a {
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+  }
+
+  .carte-investir-gauche h3 {
+  font-size: 32px;          
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+  width: 90%;
+}
+
+.carte-investir-gauche p {
+  font-size: 15px;
+  color: #555;
+  margin: 0 0 24px 0;
+  width: 80%;
+}
+
+}
