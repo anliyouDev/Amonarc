@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="Image logo" href="/amonak_v2/assets/favicon-Cw5iXeom.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amonak</title>
+  <script>
+  var redirect = sessionStorage.getItem('redirect');
+  if (redirect && redirect !== '/Amonak/') {
+    sessionStorage.removeItem('redirect');
+    history.replaceState(null, null, redirect);
+  }
+</script>
+  <script type="module" crossorigin src="/amonak_v2/assets/index-kVcX9Vq6.js"></script>
+  <link rel="stylesheet" crossorigin href="/amonak_v2/assets/index-BrsWanQL.css">
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>
