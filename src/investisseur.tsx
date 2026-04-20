@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { JSX, useState } from 'react'
 import { LiaSignInAltSolid } from "react-icons/lia"
 import { FaFacebook } from "react-icons/fa";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
@@ -8,24 +8,28 @@ import { HiCalendarDateRange } from "react-icons/hi2";
 import { MdHomeRepairService } from "react-icons/md";
 import './investisseur.css'
 import { Routes, Route, Link } from "react-router-dom"
+
+// import des images
+import logo from './assets/Images/logo/logoAmonakTexteSansFond.png'
+import fondDegrade from './assets/Images/Photo/Gemini_Generated_Image_9r78st9r78st9r78.png'
 // import './App.css'
-function Investisseur() {
+function Investisseur(): JSX.Element {
   return (
     <>
 
-      <header class="headers">
+      <header className="headers">
         <div className="imageLogos desktop tablet">
-          <Link to="/"><img src="src/assets/Images/logo/logoAmonakTexteSansFond.png" alt="Logo Amonak" width={150} /></Link>
+          <Link to="/"><img src={logo} alt="Logo Amonak" width={150} /></Link>
         </div>
         <div className="enteteMobile">
-          <div class="imageLogo">
-            <Link to="/"><img src="src/assets/Images/logo/logoAmonakTexteSansFond.png" alt="Logo Amonak" width={150} /></Link>
+          <div className="imageLogo">
+            <Link to="/"><img src={logo} alt="Logo Amonak" width={150} /></Link>
           </div>
           <div className="login">
             <a href="#"><LiaSignInAltSolid size={25} /> Se connecter</a>
           </div>
         </div>
-        <nav class="Menus desktop tablet">
+        <nav className="Menus desktop tablet">
           <a href="#">Services aux entreprises</a>
           <a href="#">Vendre sur Amonak</a>
           <a href="#">&Agrave; propos</a>
@@ -33,7 +37,7 @@ function Investisseur() {
           <a href="#">Stages</a>
 
         </nav>
-             <nav class="MenuMobile">
+        <nav className="MenuMobile">
           <a href="#">Entreprises</a>
           <a href="#">Vendeurs</a>
           <a href="#">&Agrave; propos</a>
@@ -62,7 +66,7 @@ function Investisseur() {
       </section>
 
       <section className="Investirs">
-        <div class="Amonak">
+        <div className="Amonak">
           <h1>Investir dans Amonak</h1>
           <p>Amonak élabore une nouvelle génération de plateforme de commerce en ligne,
             dans laquelle la relation est privilégiée avant la transaction et où la communauté est un facteur propulseur de croissance.
@@ -87,7 +91,7 @@ function Investisseur() {
             </div>
             <div className="carte-investir-droite">
               {/* <img src="src/assets/Images/Photo/pexels-darlene-alderson-7971695.jpg" alt="fond"/> */}
-              <img src="src\assets\Images\Photo\Gemini_Generated_Image_9r78st9r78st9r78.png" alt="fond degrade" />
+              <img src={fondDegrade} alt="fond degrade" />
               <div className='coverss'>
                 <ul>
                   <li>Fusion d'un réseau social et d'un système e-commerce automatisé.</li>
@@ -110,7 +114,7 @@ function Investisseur() {
             </div>
             <div className="carte-investir-droite">
               {/* <img src="src/assets/Images/Photo/pexels-tima-miroshnichenko-6266310.jpg" alt="fond"/> */}
-              <img src="src\assets\Images\Photo\Gemini_Generated_Image_9r78st9r78st9r78.png" alt="fond degrade" />
+              <img src={fondDegrade} alt="fond degrade" />
 
               <div className="coverss">
                 <ul>
@@ -134,7 +138,7 @@ function Investisseur() {
             </div>
             <div className="carte-investir-droite">
               {/* <img src="src/assets/Images/Photo/pexels-picha-stock-2210122-3894379.jpg" alt="fond"/> */}
-              <img src="src\assets\Images\Photo\Gemini_Generated_Image_9r78st9r78st9r78.png" alt="fond degrade" />
+              <img src={fondDegrade} alt="fond degrade" />
 
               <div className="coverss">
                 <ul>
@@ -158,7 +162,7 @@ function Investisseur() {
             </div>
             <div className="carte-investir-droite">
               {/* <img src="src/assets/Images/Photo/pexels-jakubzerdzicki-30332440.jpg" alt="fond"/> */}
-              <img src="src\assets\Images\Photo\Gemini_Generated_Image_9r78st9r78st9r78.png" alt="fond degrade" />
+              <img src={fondDegrade} alt="fond degrade" />
 
               <div className="coverss">
                 <ul>
@@ -182,7 +186,7 @@ function Investisseur() {
             </div>
             <div className="carte-investir-droite">
               {/* <img src="src/assets/Images/Photo/pexels-rdne-10376029.jpg" alt="fond"/> */}
-              <img src="src\assets\Images\Photo\Gemini_Generated_Image_9r78st9r78st9r78.png" alt="fond degrade" />
+              <img src={fondDegrade} alt="fond degrade" />
 
               <div className="coverss">
                 <ul>

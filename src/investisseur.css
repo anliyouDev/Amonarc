@@ -297,9 +297,9 @@
     width: 30vw !important;
   }
 
-  .imageLogo {
+  /* .imageLogo {
     /* border: 1px solid red; */
-  }
+  } */
   .coverss{
     text-align: justify;
   }
@@ -364,6 +364,4 @@
   color: #555;
   margin: 0 0 24px 0;
   width: 80%;
-}
-
 }

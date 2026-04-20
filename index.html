@@ -11,6 +11,13 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amonak</title>
+  <script>
+  var redirect = sessionStorage.getItem('redirect');
+  if (redirect && redirect !== '/Amonak/') {
+    sessionStorage.removeItem('redirect');
+    history.replaceState(null, null, redirect);
+  }
+</script>
 </head>
 
 <body>
