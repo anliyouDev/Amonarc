@@ -1,14 +1,21 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { HashRouter } from "react-router-dom"
+import { createRoot, hydrateRoot } from 'react-dom/client'
+import { BrowserRouter } from "react-router-dom"
 
 import './index.css'
 import App from './App'
 
-createRoot(document.getElementById('root') as HTMLElement).render(
+// Preserve existing shared links without keeping hash-based page URLs.
+const legacyInvestor=window.location.hash === '#/investisseurs';
+if (legacyInvestor) window.history.replaceState(null,'','/investisseurs');
+else if (window.location.hash === '#/') window.history.replaceState(null,'','/');
+const tree = (
   <StrictMode>
-   <HashRouter>
+   <BrowserRouter>
     <App/>
-   </HashRouter>
-  </StrictMode>,
-)
+   </BrowserRouter>
+  </StrictMode>
+);
+const root = document.getElementById('root') as HTMLElement;
+if(root.dataset.prerendered === 'true' && !legacyInvestor) hydrateRoot(root,tree);
+else createRoot(root).render(tree);

@@ -20,6 +20,8 @@ const Investisseur = lazy(() => import("./investisseur"));
 import ContactForm from "./ContactForm";
 import useReveal from "./useReveal";
 import "./App.css";
+import Seo from './seo';
+const RegionalPages = lazy(() => import('./RegionalPages'));
 
 const services = [
   {
@@ -740,6 +742,13 @@ Une sélection publique. Certains projets restent confidentiels.
           </div>
         </section>
 
+        <section className="section-shell regional-home" data-reveal>
+          <p className="eyebrow">Côte d’Ivoire · Collaborations régionales</p>
+          <h2>Des projets numériques.<br /><span>En Côte d’Ivoire et en Afrique de l’Ouest.</span></h2>
+          <p>Développement web et mobile, création de sites e-commerce, design, multimédia, formation et communication : découvrez nos services aux entreprises et nos ambitions de collaboration dans la sous-région.</p>
+          <div className="button-row"><Link className="button primary" to="/services-entreprises">Services aux entreprises <FiArrowUpRight aria-hidden /></Link><Link className="text-button" to="/ecommerce-afrique">E-commerce en Afrique <FiArrowRight aria-hidden /></Link></div>
+        </section>
+
         <section className="contact-section" id="contact">
           <div className="section-shell contact-layout">
             <div>
@@ -790,6 +799,8 @@ Une sélection publique. Certains projets restent confidentiels.
           <Link to="/investisseurs">
             Espace investisseurs <FiArrowUpRight aria-hidden />
           </Link>
+          <Link to="/services-entreprises">Services aux entreprises</Link>
+          <Link to="/ecommerce-afrique">E-commerce en Afrique</Link>
         </div>
       </footer>
     </div>
@@ -797,8 +808,10 @@ Une sélection publique. Certains projets restent confidentiels.
 }
 export default function App() {
   return (
-    <Routes>
+    <><Seo /><Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/services-entreprises" element={<Suspense fallback={<p className="route-loading">Ouverture de la page…</p>}><RegionalPages /></Suspense>} />
+      <Route path="/ecommerce-afrique" element={<Suspense fallback={<p className="route-loading">Ouverture de la page…</p>}><RegionalPages ecommerce /></Suspense>} />
       <Route
         path="/investisseurs"
         element={
@@ -818,6 +831,6 @@ export default function App() {
           </div>
         }
       />
-    </Routes>
+    </Routes></>
   );
 }
