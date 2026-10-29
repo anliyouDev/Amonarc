@@ -15,10 +15,7 @@ const thesis = [
 export default function Investisseur() {
   useReveal();
   useEffect(() => {
-    const previous = document.title;
-    document.title = 'Investir dans Amonarc — Construire le commerce de demain';
     window.scrollTo(0, 0);
-    return () => { document.title = previous; };
   }, []);
   const meet = () => document.getElementById('invest-contact')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   return <div className="corporate investor-site">
