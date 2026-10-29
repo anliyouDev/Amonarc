@@ -6,6 +6,13 @@ import { createContactHandler, recipients } from '../server/contact.js';
 const data = {name:'Test Amonarc', email:'visitor@example.org', profile:'Particulier', service:'Développement', message:'Un message de test pour notre projet.'};
 const env = {SMTP_HOST:'smtp.example.org',SMTP_USER:'contact@example.org',SMTP_PASS:'local-test-value'};
 
+test('accepts the presentation spaces of a Google app password',async t => {
+  let options;
+  const f = await fixture(t,{env:{...env,SMTP_HOST:'smtp.gmail.com',SMTP_PASS:'abcd efgh ijkl mnop'},transportFactory:value => {options=value;return {sendMail:async() => ({accepted:[...recipients]})};}});
+  assert.equal((await f.post()).status,200);
+  assert.equal(options.auth.pass,'abcdefghijklmnop');
+});
+
 async function fixture(t, options = {}) {
   const sent = [];
   const handler = createContactHandler({env,transportFactory:() => ({sendMail:async message => { sent.push(message); return {accepted:[...recipients]}; }}),...options});

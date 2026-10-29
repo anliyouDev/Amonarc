@@ -9,10 +9,12 @@ const maxBytes = 16000;
 function config(env) {
   if (!env.SMTP_HOST || !env.SMTP_USER || !env.SMTP_PASS) return null;
   const port = Number(env.SMTP_PORT || 465);
-  const from = env.SMTP_FROM || env.SMTP_USER;
+  const user = env.SMTP_USER.trim();
+  const from = (env.SMTP_FROM || user).trim();
+  const pass = env.SMTP_HOST === 'smtp.gmail.com' ? env.SMTP_PASS.replace(/\s/g, '') : env.SMTP_PASS;
   if (![465, 587].includes(port) || !emailPattern.test(from)) return null;
   return { from, transport: { host: env.SMTP_HOST, port, secure: port === 465,
-    requireTLS: true, auth: { user: env.SMTP_USER, pass: env.SMTP_PASS },
+    requireTLS: true, auth: { user, pass },
     connectionTimeout: 8000, greetingTimeout: 8000, socketTimeout: 12000 } };
 }
 
