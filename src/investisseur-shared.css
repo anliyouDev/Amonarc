@@ -1,0 +1,1145 @@
+.investor-page {
+  scroll-behavior: smooth;
+}
+.investor-page {
+  overflow-x: hidden;
+}
+
+.investor-page .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+  background: white;
+}
+
+.investor-page .imageLogo a {
+  color: #6c4ef6;
+}
+
+.investor-page .Menu {
+  display: flex;
+  gap: 40px;
+}
+
+.investor-page .Menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  padding-bottom: 7px;
+}
+
+.investor-page .Menu a:hover {
+  color: 333;
+
+  border-bottom: 2.5px solid black;
+}
+
+.investor-page .login {
+  background-color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.investor-page .login:hover {
+  background-color: #333;
+}
+
+.investor-page .login a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.investor-page .sections-un {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 60px;
+}
+
+.investor-page .reseaux-sociaux {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 10%;
+}
+
+.investor-page .reseaux-sociaux a {
+  color: black;
+}
+
+.investor-page .reseaux-sociaux a:hover {
+  color: #333;
+}
+
+.investor-page .Deviens-scoial {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 80%;
+}
+
+.investor-page .phone {
+  width: 10%;
+}
+
+.investor-page .phone img {
+  margin-left: 6.9vw;
+}
+
+.investor-page .Deviens-scoial h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: left;
+  margin: 0;
+}
+
+.investor-page .devient-social {
+  color: #888;
+}
+
+.investor-page .Deviens-scoial p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.investor-page .commencer {
+  margin-top: 30px;
+}
+
+.investor-page .commencer a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  padding: 12px 28px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.investor-page .commencer a:hover {
+  background-color: #333;
+}
+
+.investor-page .ligness {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  margin-top: -30px;
+}
+
+.investor-page .carte {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+  background-color: #e8e9ff;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 2px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  flex: 1;
+  min-height: 20px;
+  overflow: hidden;
+}
+
+.investor-page .carte-texte {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+}
+
+.investor-page .carte h3 {
+  display: flex;
+  text-align: left;
+  font-size: 17px;
+}
+
+.investor-page .application {
+  position: relative;
+  margin: 30px 150px;
+  border-radius: 24px;
+  overflow: hidden;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.investor-page .fond-arriere {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.investor-page .conteneur {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 40px;
+}
+
+.investor-page .conteneur h2 {
+  font-size: 55px;
+  font-weight: 600;
+  max-width: 600px;
+  line-height: 1.2;
+  margin: 0;
+  color: black;
+}
+
+.investor-page .conteneur p {
+  font-size: 14px;
+  color: #727171;
+  margin: 0;
+}
+
+.investor-page .app-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 2px 5px;
+}
+
+.investor-page .app-btn div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.investor-page .app-btn strong {
+  font-size: 16px;
+}
+
+.investor-page .app-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.investor-page .services {
+  background-color: #f4f4ff;
+  padding: 60px;
+  margin-top: 50px;
+}
+
+.investor-page .container {
+  display: flex;
+  width: 100%;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.investor-page .gauche {
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 20vw;
+}
+
+.investor-page .containers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.investor-page .containers h3 {
+  font-size: 35px;
+  font-weight: 900;
+  line-height: 1.3;
+  display: flex;
+
+  align-items: center;
+  gap: 5px;
+}
+
+.investor-page .containers h3 img {
+  border-radius: 20px;
+  border: 2px solid black;
+
+  width: 20%;
+  height: 18%;
+}
+
+.investor-page .containers p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #000;
+}
+
+.investor-page .rdv {
+  margin-top: 30px;
+}
+
+.investor-page .rdv a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.investor-page .rdv a:hover {
+  background-color: #333;
+}
+
+.investor-page .Options {
+  position: relative;
+  flex: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  height: 75vh;
+}
+
+.investor-page .Options > img {
+  position: absolute;
+  /* border-radius: 20px; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.75;
+}
+
+.investor-page .Options::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
+}
+
+.investor-page .Plateforme-marketing,
+.investor-page .mobile-multimeida {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  gap: 16px;
+  background-color: rgba(0, 0, 0, 0.416);
+  backdrop-filter: blur(6px);
+  color: white;
+  border-radius: 20px;
+  padding: 18px;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.investor-page .Plateforme-marketing:nth-of-type(1) {
+  margin-left: 12.5px;
+}
+
+.investor-page .mobile-multimeida:nth-of-type(2) {
+  margin-left: 400px;
+}
+
+.investor-page .Plateforme-marketing:nth-of-type(3) {
+  margin-left: 50px;
+}
+
+.investor-page .mobile-multimeida:nth-of-type(4) {
+  margin-left: 400px;
+}
+
+.investor-page .Plateforme-marketing img,
+.investor-page .mobile-multimeida img {
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+}
+
+.investor-page .carte-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.investor-page .carte-info h5 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+
+.investor-page .carte-info p {
+  font-size: 12px;
+  color: #ccc;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.investor-page .Vendre-amonak {
+  padding: 0 0 60px;
+  background-color: #f5f5f5;
+}
+
+.investor-page .vendre-amonak h3:first-child {
+  /* padding: 20px; */
+  color: #9c34c1;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+  /* padding: 50px; */
+}
+
+.investor-page .vendre-amonak h3:last-of-type {
+  font-size: 28px;
+  font-weight: 800;
+  color: black;
+  margin: 0 0 40px 0;
+  /* padding: 50px; */
+}
+
+.investor-page .vendre-amonak .les-h {
+  margin-left: 50px;
+  padding-top: 50px;
+}
+
+.investor-page .general {
+  display: flex;
+  gap: 16px;
+  padding: 50px;
+  padding-top: 20px;
+}
+
+.investor-page .chatgpt {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.investor-page .chatgpt span {
+  color: #5e4fdc;
+}
+
+.investor-page .general > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #f4f4ff;
+  border-radius: 16px;
+  padding: 16px;
+  flex: 1;
+}
+
+.investor-page .Iconess {
+  border: 1.5px solid black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  color: #000;
+  justify-content: center;
+}
+
+.investor-page .Icones {
+  width: 50px;
+  height: 50px;
+  padding: 8px;
+  width: 40%;
+  height: 40%;
+  margin: 0;
+  border: 1.5px solid black;
+  border-radius: 250px;
+}
+
+.investor-page .general h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  margin-top: auto;
+  padding-top: 50px;
+}
+
+.investor-page .general p.le-texte,
+.investor-page .general > div > p:not(.Icons) {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #444;
+  margin: 0;
+}
+
+.investor-page .propos {
+  padding: 60px;
+  background: white;
+}
+
+.investor-page .propos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.investor-page .propos-header h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.investor-page .propos-subtitle {
+  font-size: 14px;
+  color: #888;
+  text-align: right;
+  max-width: 300px;
+  margin: 0;
+}
+
+.investor-page .propos-body {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.investor-page .carte-propos {
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.investor-page .propos-texte {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+  text-align: justify;
+}
+
+.investor-page .propos-droite {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.investor-page .carte-titre {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+.investor-page .label {
+  font-size: 11px;
+  color: #888;
+  margin: 0;
+}
+
+.investor-page .valeur {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0px 0 0px 0;
+}
+
+.investor-page .formation {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+.investor-page .deux-colonnes {
+  display: flex;
+  gap: 40px;
+}
+
+/* Carte fondateur */
+.investor-page .fondateur {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.investor-page .fondateur-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.investor-page .label-upper {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.investor-page .reseaux-fondateur {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.investor-page .reseaux-fondateur a {
+  color: black;
+}
+
+.investor-page .photo-fondateur {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #ddd;
+}
+
+.investor-page .footers {
+  padding: 60px;
+  background: white;
+  text-align: center;
+}
+
+.investor-page .footers p:first-child {
+  font-style: italic;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.investor-page .footers-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.investor-page .footers-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  color: white;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+}
+
+.investor-page .footers-icons a:hover {
+  background: #333;
+}
+
+.investor-page .footers p:last-child {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+
+.investor-page .MenuMobile {
+  display: none;
+}
+
+.investor-page .enteteMobile {
+  display: none;
+}
+
+.investor-page .Deviens-scoial p {
+  text-align: center;
+}
+
+.investor-page .mobile {
+  display: none;
+}
+
+.investor-page .mt-3 {
+  margin-top: 30px;
+}
+
+/* ===== TABLETTE (max 1024px) ===== */
+@media (max-width: 1024px) {
+  .investor-page .phone {
+    display: none;
+  }
+
+  .investor-page .header {
+    padding: 20px 30px;
+  }
+
+  .investor-page .MenuMobile {
+    display: none;
+  }
+
+  .investor-page .Menu {
+    gap: 20px;
+  }
+
+  .investor-page .sections-un {
+    padding: 40px 30px;
+  }
+
+  .investor-page .ligness {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px 30px;
+  }
+
+  .investor-page .carte {
+    flex: 1 1 40%;
+  }
+
+  .investor-page .services {
+    padding: 40px 30px;
+  }
+
+  .investor-page .gauche {
+    min-width: 250px;
+    max-width: 250px;
+  }
+
+  .investor-page .vendre-amonak {
+    padding: 40px 30px;
+  }
+
+  .investor-page .general {
+    flex-wrap: wrap;
+  }
+
+  .investor-page .general > div {
+    flex: 1 1 40%;
+  }
+
+  .investor-page .propos {
+    padding: 40px 30px;
+  }
+
+  .investor-page .colonne {
+    padding: 30px 40px;
+  }
+}
+
+/* ===== MOBILE (max 768px) ===== */
+@media (max-width: 768px) {
+  .investor-page .desktop {
+    display: none;
+  }
+
+  .investor-page .tablet {
+    display: none;
+  }
+
+  .investor-page .mobile {
+    display: flex;
+  }
+
+  /* Header */
+  .investor-page .header {
+    flex-direction: column;
+    /* gap: 16px; */
+    /* padding: 20px; */
+    text-align: center;
+    margin: 0 !important;
+  }
+
+  .investor-page .imageLogo img {
+    width: 30vw !important;
+  }
+
+  .investor-page .imageLogo {
+    /* border: 1px solid red; */
+  }
+
+  .investor-page {
+    padding: 0;
+    background-color: white;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .investor-page .enteteMobile {
+    width: 100vw;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    /* border: 1px solid red; */
+    padding-left: 7vh;
+  }
+
+  .investor-page .login a {
+    margin-left: 1vw;
+  }
+
+  .investor-page .Menu {
+    display: none;
+  }
+
+  .investor-page .MenuMobile {
+    display: flex;
+    flex-direction: row;
+    /* gap: 20px; */
+    align-items: center;
+    background-color: #f5f5f5;
+    /* border: 1px solid red; */
+    width: 100vw;
+    height: 50px;
+    /* text-align: center; */
+    justify-content: space-around;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    border-top: 1.5px solid #d9d9d9;
+    margin-top: 3vh;
+  }
+
+  .investor-page .MenuMobile a {
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+  }
+
+  .investor-page .Deviens-scoial h1 {
+    font-size: 40px !important;
+  }
+
+  /* Section hero */
+  .investor-page .sections-un {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .investor-page .reseaux-sociaux {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2vh;
+  }
+
+  .investor-page .mention {
+    color: #333;
+    font-size: 14px;
+  }
+
+  .investor-page .Deviens-scoial {
+    align-items: center;
+  }
+
+  /* .Deviens-scoial h1 {
+    font-size: 32px;
+  } */
+
+  .investor-page .phone img {
+    width: 180px;
+  }
+
+  .investor-page .carte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2px;
+    background-color: #e8e9ff;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex: 1;
+    min-height: 20px;
+    max-width: 80vw;
+    overflow: hidden;
+  }
+
+  /* Cartes ligness */
+  .investor-page .ligness {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .investor-page .carte {
+    width: 100%;
+  }
+
+  /* Application */
+  .investor-page .application {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    min-height: 35vh;
+    width: 85vw;
+  }
+
+  .investor-page .section-application {
+    display: flex;
+    align-items: center;
+    padding-left: 7.5vw;
+  }
+
+  .investor-page .conteneur h2 {
+    font-size: 30px;
+  }
+
+  .investor-page .fond-arriere {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .investor-page .app-boutons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .investor-page .app-btn {
+    min-width: 30vw;
+    padding: 10px;
+  }
+
+  .investor-page .app-btn strong {
+    font-size: 14px;
+  }
+
+  .investor-page .app-btn span {
+    font-size: 10px;
+  }
+
+  /* Services */
+  .investor-page .container {
+    flex-direction: column;
+  }
+
+  .investor-page .gauche {
+    width: 100vw;
+    padding: 35px;
+  }
+
+  .investor-page .Options {
+    position: relative;
+    flex: 1;
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    min-height: 70vh;
+    max-height: 80vh;
+  }
+
+  .investor-page .padding-zero {
+    padding: 0 !important;
+  }
+
+  .investor-page .containers {
+    width: 70vw;
+  }
+
+  .investor-page .Plateforme-marketing,
+  .investor-page .mobile-multimeida {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    gap: 16px;
+    background-color: rgba(0, 0, 0, 0.416);
+    backdrop-filter: blur(6px);
+    color: white;
+    border-radius: 20px;
+    padding: 18px;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .investor-page .Plateforme-marketing:nth-of-type(1) {
+    margin-left: 0;
+  }
+
+  .investor-page .mobile-multimeida:nth-of-type(2) {
+    margin-left: 0;
+  }
+
+  .investor-page .Plateforme-marketing:nth-of-type(3) {
+    margin-left: 0;
+  }
+
+  .investor-page .mobile-multimeida:nth-of-type(4) {
+    margin-left: 0;
+  }
+
+  .investor-page .Plateforme-marketing img,
+  .investor-page .mobile-multimeida img {
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Pourquoi vendre */
+  .investor-page .general {
+    flex-direction: column;
+  }
+
+  /* À propos */
+  .investor-page .propos-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .investor-page .propos-subtitle {
+    text-align: left;
+  }
+
+  .investor-page .propos-body {
+    flex-direction: column;
+  }
+
+  .investor-page .deux-colonnes {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Investisseurs */
+  .investor-page .les-liens nav {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .investor-page .liens-droite {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .investor-page .Investirs {
+    padding: 40px 20px;
+  }
+
+  /* Cartes investir */
+  .investor-page .carte-investir {
+    flex-direction: column;
+  }
+
+  .investor-page .carte-investir-gauche {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 24px;
+  }
+
+  .investor-page .carte-investir-droite ul {
+    padding: 20px;
+  }
+
+  /* Footer */
+  .investor-page .footers {
+    padding: 40px 20px;
+  }
+
+  .investor-page .colonne {
+    padding: 20px;
+  }
+
+  .investor-page .vendre-amonak {
+    padding: 0;
+  }
+
+  .investor-page .scroll-container h4 {
+    font-size: 20px;
+    color: black;
+    font-weight: 700;
+    margin: 0;
+    margin-top: auto;
+    margin-bottom: 15px;
+    padding-top: 50px;
+  }
+
+  .investor-page .scroll-container p.le-texte,
+  .investor-page .scroll-container > div > p:not(.Icons) {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #444;
+    margin: 0;
+  }
+
+  .investor-page .scroll-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    padding: 20px;
+  }
+
+  .investor-page .scroll-item {
+    width: 60vw;
+    height: 40vh;
+
+    background-color: #f4f4ff;
+    color: white;
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  .investor-page .scroll-container .scroll-item .Iconess {
+    border: 1.5px solid black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    color: #000;
+    justify-content: center;
+  }
+  .investor-page .scroll-container .scroll-item .Iconas {
+    border: 1.5px solid black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    color: #000;
+    justify-content: center;
+  }
+}

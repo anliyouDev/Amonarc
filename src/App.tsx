@@ -1,432 +1,823 @@
-// import { useState } from 'react'
-import { LiaSignInAltSolid } from "react-icons/lia"
-import { FaFacebook } from "react-icons/fa";
-import { TbBrandLinkedinFilled } from "react-icons/tb";
-import { IoLogoApple } from "react-icons/io";
-import { AiFillTikTok } from "react-icons/ai";
-import { HiCalendarDateRange } from "react-icons/hi2";
-import { MdHomeRepairService } from "react-icons/md";
-import { TbBrandWhatsapp } from "react-icons/tb";
-import { Routes, Route, Link } from "react-router-dom"
-import { IoLogoWhatsapp } from "react-icons/io";
-import { AiFillOpenAI } from "react-icons/ai"
+import { lazy, Suspense, useRef, useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import {
+  FiArrowUpRight,
+  FiArrowRight,
+  FiMenu,
+  FiX,
+  FiPlay,
+  FiCode,
+  FiPenTool,
+  FiCamera,
+  FiLayers,
+  FiBookOpen,
+  FiMessageCircle,
+  FiCheck,
+  FiPlus,
+  FiMinus,
+} from "react-icons/fi";
+const Investisseur = lazy(() => import("./investisseur"));
+import ContactForm from "./ContactForm";
+import useReveal from "./useReveal";
+import "./App.css";
 
-// import des images 
+const services = [
+  {
+    name: "Développement",
+    short: "Des outils qui font avancer votre activité.",
+    description:
+      "Sites web, applications mobiles et logiciels métiers : nous concevons des solutions adaptées à vos usages, à vos équipes et à vos clients.",
+    items: [
+      "Sites vitrines & e-commerce",
+      "Applications web & mobiles",
+      "API & systèmes de gestion",
+      "Digitalisation & automatisation",
+    ],
+    tools: "Web · Mobile · Solutions métiers",
+    icon: FiCode,
+  },
+  {
+    name: "Design",
+    short: "Une identité qui vous ressemble.",
+    description:
+      "De votre identité visuelle à l’expérience de vos utilisateurs, nous donnons une forme claire et cohérente à votre marque.",
+    items: [
+      "Identité visuelle & charte graphique",
+      "Design d’interfaces UI/UX",
+      "Prototypage",
+      "Direction artistique & supports",
+    ],
+    tools: "Identité · Expérience · Création",
+    icon: FiPenTool,
+  },
+  {
+    name: "Multimédia",
+    short: "Des images qui racontent votre histoire.",
+    description:
+      "Nous créons les contenus photo, vidéo et animés qui présentent votre activité et donnent vie à vos messages.",
+    items: [
+      "Photographie professionnelle",
+      "Vidéographie",
+      "Motion design",
+      "Couverture d’événements",
+    ],
+    tools: "Photo · Vidéo · Animation",
+    icon: FiCamera,
+  },
+  {
+    name: "Pilotage de projet",
+    short: "Une direction claire, à chaque étape.",
+    description:
+      "Nous vous accompagnons dans le cadrage et la coordination de vos projets numériques, avec une organisation adaptée à vos objectifs.",
+    items: [
+      "Cadrage du besoin",
+      "Coordination des intervenants",
+      "Méthodes agiles",
+      "Gestion et suivi de projet",
+    ],
+    tools: "Cadrage · Coordination · Suivi",
+    icon: FiLayers,
+  },
+  {
+    name: "Formation",
+    short: "Transmettre pour vous rendre autonome.",
+    description:
+      "Entreprises, équipes et particuliers : développez vos compétences grâce à un accompagnement et un transfert de savoir-faire.",
+    items: [
+      "Formation & accompagnement",
+      "Transfert de compétences",
+      "Alternance",
+      "Stages",
+    ],
+    tools: "Apprendre · Pratiquer · Progresser",
+    icon: FiBookOpen,
+  },
+  {
+    name: "Marketing & communication",
+    short: "Le bon message. Au bon endroit.",
+    description:
+      "Nous vous aidons à construire votre stratégie et votre image, avec des actions de communication adaptées à votre public, en ligne et hors ligne.",
+    items: [
+      "Études & diagnostic",
+      "Stratégie de communication",
+      "Contenus & supports de campagne",
+      "Accompagnement de l’image",
+    ],
+    tools: "Stratégie · Image · Visibilité",
+    icon: FiMessageCircle,
+  },
+];
+const milestones = [
+  [
+    "2019",
+    "Les premiers pas",
+    "Incubation chez Kufanya et construction du projet.",
+  ],
+  [
+    "2020",
+    "Une étape structurante",
+    "Obtention du label Startup Act en Tunisie.",
+  ],
+  [
+    "2021",
+    "Un environnement technologique",
+    "Intégration du pôle technologique de Manouba.",
+  ],
+  [
+    "2024",
+    "Un ancrage à Abidjan",
+    "Intégration du centre d’affaires KEY Abidjan.",
+  ],
+  [
+    "2025",
+    "Industrie & transformation",
+    "Contribution à des travaux sur la transformation numérique de l’industrie en Côte d’Ivoire.",
+  ],
+];
+const references = [
+  {
+    name: "MT Business Group",
+    image: "mt-business-group",
+    type: "Communication & création",
+    ext: "webp",
+  },
+  { name: "DORANCO", image: "doranco", type: "Formation", ext: "webp" },
+  {
+    name: "Cloud Campus",
+    image: "cloud-campus",
+    type: "Formation",
+    ext: "webp",
+  },
+  {
+    name: "Next Formation",
+    image: "next-formation",
+    type: "Formation",
+    ext: "webp",
+  },
+  { name: "La Poste", image: "la-poste", type: "Formation", ext: "webp" },
+];
+const faqs = [
+  [
+    "Travaillez-vous avec les entreprises et les particuliers ?",
+    "Oui. Nous accompagnons les entreprises, entrepreneurs, institutions, associations et particuliers. Le périmètre de notre intervention se construit à partir de votre besoin.",
+  ],
+  [
+    "Comment démarrer un projet avec Amonarc ?",
+    "Présentez-nous votre objectif via le formulaire de contact ou par téléphone. Nous échangeons sur le besoin, les livrables et les contraintes avant de définir ensemble le périmètre et la proposition.",
+  ],
+  [
+    "Amonak et Amonarc sont-ils la même entreprise ?",
+    "Amonarc est le nouveau nom d’Amonak. Cette évolution de notre identité accompagne notre ambition dans les services informatiques, la création et la communication.",
+  ],
+  [
+    "Quelle place occupe l’application e-commerce ?",
+    "L’application sociale e-commerce est un produit développé par Amonarc. Elle possède son propre univers, distinct de l’offre de services présentée sur ce site. Son prototype est en développement.",
+  ],
+];
+const base = import.meta.env.BASE_URL;
+const asset = (path: string) => `${base}${path}`;
 
-import logo from './assets/Images/logo/logoAmonakTexteSansFond.png'
-import telephone from './assets/Images/Telephone/c5.png'
-import carteImg1 from './assets/Images/Telephone/c1.png'
-import carteImg2 from './assets/Images/Telephone/c2.png'
-import carteImg3 from './assets/Images/Telephone/c7.png'
-import carteImg4 from './assets/Images/Telephone/cc.png'
-import carteImg5 from './assets/Images/Telephone/c6.png'
-import fondArriere from './assets/Images/Photo/Gemini_Generated_Image_9r78st9r78st9r78.png'
-import googlePlay from './assets/Images/logo/Google-Play-Logo-No-Background.png'
-import servicesImg from './assets/Images/Photo/ChatGPT Image 21 févr. 2026, 21_17_30.png'
-import ordinateur from './assets/Images/Photo/pexels-shoper-pl-550490863-16675632.jpg'
-import telephone2 from './assets/Images/Photo/pexels-tdcat-54284.jpg'
-import marketing from './assets/Images/Photo/pexels-negativespace-110078.jpg'
-import multimedia from './assets/Images/Photo/pexels-george-zografidis-1705219-10181269.jpg'
-import fondateur from './assets/Images/Photo/P1137182-Avec accentuation-Bruit.jpg'
+function Home() {
+  const [menu, setMenu] = useState(false);
+  const [active, setActive] = useState(0);
+  const [playing, setPlaying] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+  useReveal();
+  const video = useRef<HTMLVideoElement>(null);
+  const current = services[active];
+  const Icon = current.icon;
 
-
-
-
-import Investisseur from "./investisseur"
-import './App.css'
-import { JSX } from "react";
-
-function Home(): JSX.Element {
-  const scrollTo = (id: string): void => {
-    document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+  function go(id: string) {
+    setMenu(false);
+    document
+      .getElementById(id)
+      ?.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+        block: "start",
+      });
   }
+  async function play() {
+    go("presentation");
+    video.current?.focus({ preventScroll: true });
+    try {
+      await video.current?.play();
+    } catch {
+      setVideoError(true);
+    }
+  }
+
   return (
-    <>
-      <header className="header">
-        <div className="imageLogo desktop tablet">
-          {/* <Link to="/"><img src="src/assets/Images/logo/logoAmonakTexteSansFond.png" alt="Logo Amonak" width={150} /></Link> */}
-          <Link to="/"><img src={logo} alt="Logo Amonak" width={150} /></Link>
+    <div className="corporate">
+      <a
+        className="skip-link"
+        href="#contenu"
+        onClick={(e) => {
+          e.preventDefault();
+          document.getElementById("contenu")?.focus();
+          go("contenu");
+        }}
+      >
+        Aller au contenu
+      </a>
+      <header className="site-header">
+        <div className="nav-inner">
+          <Link to="/" aria-label="Amonarc, accueil" className="brand">
+            <img
+              src={asset("media/amonarc-logo.png")}
+              alt="Amonarc"
+              width="186"
+              height="47"
+            />
+          </Link>
+          <nav className="desktop-nav" aria-label="Navigation principale">
+            {[
+              ["expertises", "Expertises"],
+              ["realisations", "Réalisations"],
+              ["histoire", "Notre histoire"],
+            ].map(([id, label]) => (
+              <button key={id} onClick={() => go(id)}>
+                {label}
+              </button>
+            ))}
+            <button onClick={() => go("application")}>L’application</button>
+            <Link to="/investisseurs" className="nav-invest">Investisseurs ↗</Link>
+          </nav>
+          <button className="nav-contact" onClick={() => go("contact")}>
+            Parlons de votre projet <FiArrowUpRight aria-hidden />
+          </button>
+          <button
+            className="menu-toggle"
+            aria-label={menu ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={menu}
+            aria-controls="mobile-nav"
+            onClick={() => setMenu(!menu)}
+          >
+            {menu ? <FiX /> : <FiMenu />}
+          </button>
         </div>
-
-        <div className="enteteMobile">
-          <div className="imageLogo">
-            <Link to="/"><img src={logo} alt="Logo Amonak" width={150} /></Link>
-          </div>
-          <div className="login">
-            <a href="#"><LiaSignInAltSolid size={25} /> Se connecter</a>
-          </div>
-        </div>
-
-        <nav className="Menu">
-          <a onClick={() => scrollTo('services')} style={{cursor:'pointer'}}>Services aux entreprises</a>
-          <a onClick={() => scrollTo('vendeurs')} style={{cursor:'pointer'}}>Vendre sur Amonak</a>
-          <a onClick={() => scrollTo('apropos')} style={{cursor:'pointer'}}>&Agrave; propos</a>
-          <Link to="/investisseurs">Investisseurs</Link>
-          <a href="https://www.ytsuccesslab.com/" target="_blank">Stages</a>
-        </nav>
-
-         {/* ✅ navbar mobile */}
-        <nav className="MenuMobile">
-          <a onClick={() => scrollTo('services')} style={{cursor:'pointer'}}>Entreprises</a>
-          <a onClick={() => scrollTo('vendeurs')} style={{cursor:'pointer'}}>Vendeurs</a>
-          <a onClick={() => scrollTo('apropos')} style={{cursor:'pointer'}}>&Agrave; propos</a>
-          <Link to="/investisseurs">Investisseurs</Link>
-          <a href="#">Stages</a>
-        </nav>
-
-        <div className="login desktop tablet">
-          <a href="#"><LiaSignInAltSolid size={27} /> Se connecter</a>
-        </div>
-
+        {menu && (
+          <nav
+            id="mobile-nav"
+            className="mobile-nav"
+            aria-label="Navigation mobile"
+          >
+            {[
+              ["expertises", "Expertises"],
+              ["realisations", "Réalisations"],
+              ["histoire", "Notre histoire"],
+              ["application", "L’application"],
+              ["contact", "Contact"],
+            ].map(([id, label]) => (
+              <button key={id} onClick={() => go(id)}>
+                {label}
+                <FiArrowUpRight aria-hidden />
+              </button>
+            ))}
+            <Link to="/investisseurs" className="mobile-invest">Investir dans Amonarc <FiArrowUpRight aria-hidden /></Link>
+          </nav>
+        )}
       </header>
-        {/* <En-tete/> */}
-      <section className="sections-un">
-        <div className="reseaux-sociaux desktop tablet">
-          <a href="https://www.facebook.com/Seenew.seefar" target='_blank'>  <FaFacebook size={30} /></a>
-          <a href="https://www.linkedin.com/company/amonak/posts/?feedView=all" target='_blank'><TbBrandLinkedinFilled size={30} /></a>
-          <a href="#"><AiFillTikTok size={30} /></a>
 
-
-        </div>
-        <div className="Deviens-scoial">
-          <h1>Vendre,</h1>
-          <h1 className="devient-social ">devient social</h1>
-          <p >Amonak est <b>le premier réseau social e-commerce</b> qui réunit vendeurs, créateurs et acheteurs dans un espace simple, social et ouvert à tous. Ici,<b> chaque produit raconte une histoire, chaque partage crée une opportunité</b>. Vendre, acheter, grandir.
-            <b>Tout commence par une connexion</b>.</p>
-          <div className="commencer">
-            <a href="#"> <LiaSignInAltSolid size={27} />Commencer maintenant </a>
+      <main id="contenu" tabIndex={-1}>
+        <section className="hero section-shell">
+          <div className="hero-orb" aria-hidden />
+          <div className="hero-copy">
+            <p className="eyebrow">
+              <span className="status-dot" /> Technologie. Création. Impact.
+            </p>
+            <h1>
+              Vos ambitions.
+              <br />
+              Notre expertise.
+              <br />
+              <span>Donnons-leur vie.</span>
+            </h1>
+            <p className="hero-description">
+              Votre partenaire en services informatiques et communication. Nous
+              accompagnons les entreprises et les particuliers, de l’idée à sa
+              réalisation.
+            </p>
+            <div className="button-row">
+              <button className="button primary" onClick={() => go("contact")}>
+                Construisons votre projet <FiArrowUpRight aria-hidden />
+              </button>
+              <button className="text-button" onClick={() => go("expertises")}>
+                Explorer nos expertises <FiArrowRight aria-hidden />
+              </button>
+            </div>
+            <div className="hero-meta">
+              <span>B2B & B2C</span>
+              <i aria-hidden /> Une ambition africaine. Une ouverture
+              internationale.
+            </div>
           </div>
-        </div>
-        <div className="mention mobile mt-3"><i>Restez informé</i></div>
-        <div className="reseaux-sociaux mobile ">
-          <a href="https://www.facebook.com/Seenew.seefar" target='_blank'>  <FaFacebook size={30} /></a>
-          <a href="https://www.linkedin.com/company/amonak/posts/?feedView=all" target='_blank'><TbBrandLinkedinFilled size={30} /></a>
-          <a href="#"><AiFillTikTok size={30} /></a>
-        </div>
-
-        <div className="phone">
-          {/* <img src="src\assets\Images\Telephone\c5.png" alt="telephone" width={250} /> */}
-          <img src={telephone} alt="telephone" width={250} />
-        </div>
-
-      </section>
-
-
-      <section className="ligness desktop tablet">
-
-        <div className="carte">
-          <div className="carte-texte">
-            <h3>Vendre par vidéo</h3>
-            <p>Sur Amonak, la vente se fait exclusivement par vidéo pour créer plus de confiance entre vendeurs et acheteurs.</p>
+          <div className="hero-media" id="presentation">
+            <div className="media-topline">
+              <span>AMONARC EN MOUVEMENT</span>
+              <span>00:35</span>
+            </div>
+            <div className="video-wrap">
+              <video
+                ref={video}
+                controls
+                playsInline
+                preload="none"
+                poster={asset("media/video-poster.webp")}
+                aria-label="Présentation Amonarc : développement, design, multimédia, pilotage, formation et communication"
+                onPlay={() => setPlaying(true)}
+                onPause={() => setPlaying(false)}
+                onEnded={() => setPlaying(false)}
+                onError={() => setVideoError(true)}
+              >
+                <source
+                  src={asset("media/amonarc-presentation.mp4")}
+                  type="video/mp4"
+                />
+                Votre navigateur ne prend pas en charge cette vidéo.
+              </video>
+              {!playing && !videoError && (
+                <button
+                  className="video-play"
+                  onClick={play}
+                  aria-label="Lire la présentation Amonarc"
+                >
+                  <FiPlay aria-hidden />
+                </button>
+              )}
+            </div>
+            <div className="video-caption">
+              <span>Une idée. Et après ?</span>
+              <button onClick={play}>
+                Découvrez Amonarc <FiArrowUpRight aria-hidden />
+              </button>
+            </div>
+            {videoError && (
+              <p className="video-fallback" role="status">
+                La lecture n’a pas démarré. Utilisez les commandes du lecteur ou{" "}
+                <a href={asset("media/amonarc-presentation.mp4")}>
+                  ouvrez la vidéo
+                </a>
+                .
+              </p>
+            )}
+            <div className="media-note">
+              <span className="note-symbol" aria-hidden>
+                ↗
+              </span>
+              <p>
+                Des compétences qui se complètent.
+                <br />
+                <strong>Des solutions qui prennent forme.</strong>
+              </p>
+            </div>
           </div>
-          {/* <img src="src\assets\Images\Telephone\c1.png" alt="image_1" width={80} /> */}
-          <img src={carteImg1} alt="image_1" width={80} />
-        </div>
+        </section>
 
-        <div className="carte">
-          <div className="carte-texte">
-            <h3>Vendeurs vérifiés</h3>
-            <p>le vendeur et sa boutique sont examinés avant tout droit de mettre des articles en ventes.</p>
+        <section
+          className="references section-shell"
+          aria-labelledby="references-title"
+        >
+          <div className="reference-heading">
+            <h2 id="references-title">
+              Des collaborations.
+              <br />
+              <span>De la confiance.</span>
+            </h2>
+            <p>
+              Une sélection de nos références
+              <br />
+              en communication et en formation.
+            </p>
           </div>
-          <img src={carteImg2} alt="image_2" width={80} />
-        </div>
-
-        <div className="carte">
-          <div className="carte-texte">
-            <h3>Paiement facile via mobile money</h3>
-            <p>Chaque article peut être acheté rapidement via tous les opérateurs de service mobile money.</p>
-          </div>
-          <img src={carteImg3} alt="image_3" width={80} />
-        </div>
-
-        <div className="carte">
-          <div className="carte-texte">
-            <h3>Sécurité garantie</h3>
-            <p>Le vendeur récupère l'argent de votre paiement uniquement après livraison.</p>
-          </div>
-          <img src={carteImg4} alt="image_4" width={80} />
-        </div>
-
-        <div className="carte">
-          <div className="carte-texte">
-            <h3>Créer et entretenir sa communauté</h3>
-            <p>Stories, publications, messagerie et bien d'autre opportunités de créer de l'impact.</p>
-
-          </div>
-          <img src={carteImg5} alt="image_5" width={80} />
-        </div>
-
-      </section>
-
-      <section className="section-application">
-        <div className="application">
-          <img src={fondArriere} alt="fond-arriere" className='fond-arriere' />
-          <div className="conteneur">
-            <h2>Notre application bientôt disponible et gratuite </h2>
-            <p>Réalisons ensemble votre plus grand rêve, devenir votre propre patron.</p>
-            <div className="app-buttons">
-              <a href="#" className='app-btn'>
-                <IoLogoApple size={30} />
-                <div>
-                  <span>Download on the </span>
-                  <strong>App Store</strong>
+          <div className="logo-grid">
+            {references.map((ref) => (
+              <figure key={ref.name}>
+                <div className="client-logo">
+                  <img
+                    src={asset(`clients/${ref.image}.${ref.ext}`)}
+                    alt={ref.name}
+                    loading="lazy"
+                  />
                 </div>
-              </a>
-              <a href="#" className='app-btn'>
-                <img src={googlePlay} alt="google play" width={20} />
-                <div>
-                  <span>GET IN ON</span>
-                  <strong>Google Play</strong>
-                </div>
-              </a>
-            </div>
+                <figcaption>{ref.type}</figcaption>
+              </figure>
+            ))}
           </div>
-        </div>
+        </section>
 
-      </section>
-
-      <section className="services padding-zero" id="services">
-        <div className="container ">
-          <div className='gauche'>
-            <div className='containers'>
-              <h3>
-                Nos   Services aux entreprises
-              </h3>
-              <p>Forte de son expérience, et fidèle à sa mission, notre équipe accompagne
-                chaque client jusqu'à la satisfaction de ses objectifs professionnels.
-                Nous accompagnons chaque client dans la conception,
-                le développement et l'optimisation de solutions numériques adaptée à chaque besoin.</p>
-            </div>
-
-            <div className="rdv">
-
-              <a href="#"><HiCalendarDateRange />Prendre un rendez-vous</a>
-            </div>
-          </div>
-
-          <div className="Options">
-            <img src={servicesImg} alt="image des personnes assises au tour d'une table" />
-
-
-            <div className="Plateforme-marketing">
-              <img src={ordinateur} alt="ordinateur" width={100} />
-              <div className="carte-info">
-                <h5>Plateforme & application  </h5>
-                <p>Conception et développement de plateformes web sur mesure : sites vitrines, plateformes SaaS, marketplaces, portails clients et solutions métiers.</p>
-              </div>
-            </div>
-            <div className="mobile-multimeida">
-             <img src={telephone2} alt="Telephone" width={100} />
-              <div className="carte-info">
-                <h5>Application mobile</h5>
-                <p>Création d'applications mobiles performantes (Android & iOS) pour digitaliser vos services, améliorer l'engagement utilisateur et optimiser vos opérations.</p>
-              </div>
-            </div>
-            <div className="Plateforme-marketing">
-              <img src={marketing} alt="ordinateur" width={100} />
-              <div className="carte-info">
-                <h5>Marketing & com digital</h5>
-                <p>Stratégies digitales et campagnes ciblées : branding, charte graphique, gestion des réseaux sociaux, publicité en ligne, email marketing et positionnement de marque.</p>
-              </div>
-            </div>
-            <div className="mobile-multimeida">
-              <img src={multimedia} alt="appareil-photo" width={100} />
-              <div className="carte-info">
-                <h5>Multimédia</h5>
-                <p>Production de contenus visuels professionnels : photographie, vidéo, motion design, identité visuelle et supports digitaux.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <section className="vendre-amonak" id="vendeurs">
-        <div>
-          <div className="les-h">
-            <h3>Pourquoi</h3>
-            <h3>vendre sur Amonak</h3>
-          </div>
-          <div className='general desktop tablet'>
-            <div>
-              <div className="Iconess">
-                <MdHomeRepairService />
-              </div>
-              <h4>Chaque compte créé est l'équivalent d'un site e-commerce</h4>
-              <p className='le-texte'>Plus besoin de discuter avec chaque client avant de vendre.
-                Les paiements se font directement via mobile money ou carte bancaire.
-                Après livraison, transférer le gain de vos ventes se fait à la minute
-                vers le compte de votre choix.</p>
-            </div>
-            <div>
-              <div className="Iconess">
-                <MdHomeRepairService />
-              </div>
-              <h4>Modèle hybride : social + e-commerce</h4>
-              <p>Créer des relations fortes, et bâtir une communauté solide autour sa boutique, afin de vendre davantage via la visibilité sociale.</p>
-            </div>
-            <div>
-              <div className="Iconess">
-                <MdHomeRepairService />
-              </div>
-              <h4>Devenir une référence incontournable</h4>
-              <p>En rejoignant maintenant Amonarc, vous faites partie des pionniers et vous devenez une référence pour tous les futures utilisateurs. </p>
-            </div>
-            <div>
-              <div className="Iconess">
-                <MdHomeRepairService />
-              </div>
-              <h4>Votre marque devient plus puissante et plus visible</h4>
-              <p>En vendant sur Amonarc, c'est votre boutique qui est mise en avant. La notoriété et la gloire vous revient.
-                Contrairement aux marketplace, Votre marque n'est pas mise en second plan, mais devient un pilier centrale.</p>
-            </div>
-            <div>
-              <div className="Iconess">
-                <MdHomeRepairService />
-              </div>
-              <h4>Regagner la confiance du client</h4>
-              <p>Le profil et la boutique de chaque vendeur sont maintenant vérifiés par Amonarc.  Ainsi plus aucun client ne peut craindre de se faire arnaquer.</p>
-            </div>
-          </div>
-        </div>
-
-        {/* LISTE SUR MOBILE */}
-        <div className="scroll-container mobile">
-          <div className="scroll-item">
-            
-              <div className="Iconas">
-                <MdHomeRepairService />
-              </div>
-              <h4>Chaque compte créé est un site e-commerce</h4>
-              <p className='le-texte'>Vendez facilement sans discuter avec chaque client. Les paiements se font par mobile money ou carte bancaire, et vos gains peuvent être transférés immédiatement après la livraison.</p>
-            
-          </div>
-          <div className="scroll-item">
-            <div className="Iconess">
-                <MdHomeRepairService />
-              </div>
-              <h4>Modèle hybride : social + e-commerce</h4>
-              <p>Créer des relations fortes, et bâtir une communauté solide autour sa boutique, afin de vendre davantage via la visibilité sociale.</p>
-          </div>
-          <div className="scroll-item">
-            <div className="Iconess">
-                <MdHomeRepairService />
-              </div>
-              <h4>Devenir une référence incontournable</h4>
-              <p>En rejoignant maintenant Amonarc, vous faites partie des pionniers et vous devenez une référence pour tous les futures utilisateurs. </p>
-          </div>
-          <div className="scroll-item">
-            <div className="Iconess">
-                <MdHomeRepairService />
-              </div>
-              <h4>Votre marque devient plus puissante et plus visible</h4>
-              <p>Sur Amonarc, votre boutique et votre marque sont mises en avant. Contrairement aux marketplaces, votre marque reste au centre et gagne en visibilité.</p>
-          </div>
-          <div className="scroll-item">
-            <div className="Iconess">
-                <MdHomeRepairService />
-              </div>
-              <h4>Regagner la confiance du client</h4>
-              <p>Le profil et la boutique de chaque vendeur sont maintenant vérifiés par Amonarc.  Ainsi plus aucun client ne peut craindre de se faire arnaquer.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="propos" id="apropos">
-
-        <div className="propos-header">
-          <h2>À Propos</h2>
-          <p className="propos-subtitle">L'entreprise qui réinvente l'e-commerce et le service aux entreprises</p>
-        </div>
-
-
-        <div className="propos-body">
-
-
-          <div className="propos-texte carte-propos">
-            <p>Amonak est né d'une conviction simple : la jeunesse africaine possède un immense potentiel entrepreneurial, mais elle manque souvent d'outils adaptés pour vendre facilement et développer ses activités en ligne. Porté par une équipe de passionnés, Amonak a été conçu comme un réseau social dédié à l'e-commerce où chaque profil peut fonctionner comme un véritable espace de vente.
-
-En répondant à des problèmes concrets comme la fraude à l'image, la gestion manuelle des ventes sur les réseaux sociaux ou la difficulté d'accéder au marché international, Amonak ambitionne de restaurer la confiance dans le commerce en ligne et d'offrir aux jeunes entrepreneurs un moyen simple de partager leur savoir-faire et d'atteindre des clients partout dans le monde.</p>
-          </div>
-
-
-          <div className="propos-droite">
-
-
-            <div className="carte-propos">
-              <h3 className="carte-titre">Société</h3>
+        <section className="expertise-section" id="expertises">
+          <div className="section-shell">
+            <div className="section-heading">
               <div>
-                <p className="label">Raison social</p>
-              <p className="valeur">Amonarc</p>
+                <p className="eyebrow">01 / Nos expertises</p>
+                <h2>
+                  Le bon savoir-faire.
+                  <br />
+                  <span>Pour votre prochain pas.</span>
+                </h2>
               </div>
-              <div className="deux-colonnes">
-                <div>
-                  <p className="label">Forme juridique</p>
-                  <p className="valeur">SARL</p>
+              <p>
+                Un besoin précis ou un projet complet :<br />
+                mobilisons les compétences adaptées.
+              </p>
+            </div>
+            <div className="expertise-layout">
+              <div
+                className="expertise-tabs"
+                role="tablist"
+                aria-label="Domaines d’expertise"
+                aria-orientation="vertical"
+              >
+                {services.map((service, i) => {
+                  const ItemIcon = service.icon;
+                  return (
+                    <button
+                      id={`service-tab-${i}`}
+                      key={service.name}
+                      role="tab"
+                      aria-selected={active === i}
+                      aria-controls="service-panel"
+                      tabIndex={active === i ? 0 : -1}
+                      onClick={() => setActive(i)}
+                      onKeyDown={(e) => {
+                        let next = i;
+                        if (e.key === "ArrowDown" || e.key === "ArrowRight")
+                          next = (i + 1) % services.length;
+                        else if (e.key === "ArrowUp" || e.key === "ArrowLeft")
+                          next = (i - 1 + services.length) % services.length;
+                        else if (e.key === "Home") next = 0;
+                        else if (e.key === "End") next = services.length - 1;
+                        else return;
+                        e.preventDefault();
+                        setActive(next);
+                        document.getElementById(`service-tab-${next}`)?.focus();
+                      }}
+                    >
+                      <span className="service-num">0{i + 1}</span>
+                      <ItemIcon aria-hidden />
+                      <span>{service.name}</span>
+                      <FiArrowUpRight aria-hidden className="tab-arrow" />
+                    </button>
+                  );
+                })}
+              </div>
+              <div
+                className="service-panel"
+                role="tabpanel"
+                id="service-panel"
+                aria-labelledby={`service-tab-${active}`}
+                tabIndex={0}
+              >
+                <div className="service-illustration" aria-hidden>
+                  <div className="illustration-orbit orbit-one" />
+                  <div className="illustration-orbit orbit-two" />
+                  <div className="illustration-icon">
+                    <Icon />
+                  </div>
+                  <span className="illustration-dot dot-one" />
+                  <span className="illustration-dot dot-two" />
                 </div>
-                <div>
-                  <p className="label">Adresse</p>
-                  <p className="valeur">15 Avenue Bictogo</p>
+                <div className="service-detail" key={active}>
+                  <p className="micro-label">{current.tools}</p>
+                  <h3>{current.short}</h3>
+                  <p>{current.description}</p>
+                  <ul>
+                    {current.items.map((item) => (
+                      <li key={item}>
+                        <FiCheck aria-hidden />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <button
+                    className="text-button"
+                    onClick={() => {
+                      const select = document.getElementById(
+                        "service",
+                      ) as HTMLSelectElement | null;
+                      if (select) select.value = current.name;
+                      go("contact");
+                    }}
+                  >
+                    Parlons de votre besoin <FiArrowUpRight aria-hidden />
+                  </button>
                 </div>
               </div>
             </div>
-
-
-            <div className="carte-propos fondateur">
-              <div className="fondateur-info">
-                <p className="label-upper">FONDATEUR & CEO</p>
-                <p className="valeur">Jean Philippe KOKORA</p>
-                <p className="formation"><i>Informaticien chercheur</i></p>
-                <div className="reseaux-fondateur">
-                  <a href="https://www.facebook.com/jeanphilippe.kokora" target="_blank"> <FaFacebook size={20} /></a>
-                  <a href="https://www.linkedin.com/in/jean-philippe-kokora/" target="_blank"><TbBrandLinkedinFilled size={20} /></a>
-                  <a href="https://www.tiktok.com/@jeanphilippekokora" target="_blank"> <AiFillTikTok size={20} /></a>
-                  <a href="https://wa.me/21656058706" target="_blank"><IoLogoWhatsapp size={20} /> </a>
-
-                </div>
-              </div>
-              <img src={fondateur} alt="Fondateur" className="photo-fondateur" />
-            </div>
-
           </div>
+        </section>
+
+        <section className="projects section-shell" id="realisations">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">02 / Nos réalisations</p>
+              <h2>
+                Des idées devenues
+                <br />
+                <span>des réalisations.</span>
+              </h2>
+            </div>
+            <p>Des compétences complémentaires, réunies autour de votre projet.</p>
+          </div>
+          <div className="project-grid">
+            {[
+              [
+                "mt-business-group",
+                "MT Business Group",
+                "Communication & création",
+                "Une collaboration en communication et création, présentée parmi nos références.",
+              ],
+            ].map(([image, name, category, description], i) => (
+              <article className={`project-card project-${i}`} key={name}>
+                <div className="project-image">
+                  <img
+                    src={asset(`clients/${image}.webp`)}
+                    alt={`Logo de ${name}`}
+                    loading="lazy"
+                    width="540"
+                    height="770"
+                  />
+                  <span className="project-index">0{i + 1}</span>
+                </div>
+                <div className="project-info">
+                  <p className="micro-label">{category}</p>
+                  <h3>{name}</h3>
+                  <p>{description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <p className="source-note">
+Une sélection publique. Certains projets restent confidentiels.
+          </p>
+        </section>
+
+        <section className="approach-section">
+          <div className="section-shell approach-layout">
+            <div>
+              <p className="eyebrow light">03 / Travailler ensemble</p>
+              <h2>
+                La confiance se construit.
+                <br />
+                <span>Étape par étape.</span>
+              </h2>
+              <p className="approach-intro">
+                Un échange clair, des compétences complémentaires et un
+                périmètre défini ensemble pour faire avancer votre projet.
+              </p>
+            </div>
+            <ol className="process-list">
+              {[
+                [
+                  "Comprendre",
+                  "Votre contexte, vos usages et les objectifs qui comptent pour vous.",
+                ],
+                [
+                  "Concevoir",
+                  "Une réponse adaptée, un périmètre clair et des livrables identifiés.",
+                ],
+                [
+                  "Réaliser",
+                  "Développement, création et coordination des compétences du projet.",
+                ],
+                [
+                  "Transmettre",
+                  "Prise en main et transfert de compétences selon votre besoin.",
+                ],
+              ].map(([name, desc], i) => (
+                <li key={name}>
+                  <span>0{i + 1}</span>
+                  <div>
+                    <h3>{name}</h3>
+                    <p>{desc}</p>
+                  </div>
+                  <FiArrowUpRight aria-hidden />
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="history section-shell" id="histoire">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">04 / Notre histoire</p>
+              <h2>
+                Une nouvelle identité.
+                <br />
+                <span>Une ambition qui continue.</span>
+              </h2>
+            </div>
+          </div>
+          <div className="history-intro">
+            <div className="rebrand">
+              <img
+                src={asset("media/amonak-logo.png")}
+                alt="Ancien logo Amonak"
+                width="190"
+                height="60"
+                loading="lazy"
+              />
+              <span>
+                devient <FiArrowRight aria-hidden />
+              </span>
+              <img
+                src={asset("media/amonarc-logo.png")}
+                alt="Nouveau logo Amonarc"
+                width="240"
+                height="60"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3>Amonak devient Amonarc.</h3>
+              <p>
+                Notre parcours s’est construit entre technologie, création et
+                entrepreneuriat. Amonarc porte aujourd’hui cette ambition :
+                mettre l’innovation numérique au service du développement de
+                l’Afrique et créer des solutions capables de rayonner à
+                l’international.
+              </p>
+            </div>
+          </div>
+          <div className="timeline">
+            {milestones.map(([year, title, desc]) => (
+              <article key={year}>
+                <span className="timeline-year">{year}</span>
+                <div className="timeline-point" aria-hidden />
+                <h3>{title}</h3>
+                <p>{desc}</p>
+              </article>
+            ))}
+          </div>
+          <div className="founder-note">
+            <span>Une équipe pluridisciplinaire</span>
+            <p>
+              Des profils techniques, créatifs, entrepreneuriaux et
+              scientifiques réunis autour de vos projets.
+            </p>
+            <span>
+              Jean Philippe Kokora
+              <br />
+              <strong>Fondateur & CEO · Doctorant en informatique</strong>
+            </span>
+          </div>
+        </section>
+
+        <section className="app-section section-shell" id="application">
+          <div className="app-banner">
+            <div>
+              <p className="eyebrow">Aussi, un produit Amonarc</p>
+              <h2>
+                Le commerce.
+                <br />
+                <span>À la force des communautés.</span>
+              </h2>
+              <p>
+                Notre application sociale e-commerce est un autre volet de
+                l’aventure Amonarc. Un projet conçu pour rapprocher les
+                vendeurs, les acheteurs et leurs communautés.
+              </p>
+              <div className="app-status">
+                <span className="status-dot" /> Prototype en développement
+              </div>
+              <button
+                className="text-button"
+                onClick={() => {
+                  const select = document.getElementById(
+                    "service",
+                  ) as HTMLSelectElement | null;
+                  if (select) select.value = "Application e-commerce";
+                  go("contact");
+                }}
+              >
+                En savoir plus sur l’application <FiArrowUpRight aria-hidden />
+              </button>
+            </div>
+            <figure className="phone-stage">
+              <span className="phone-orbit" aria-hidden />
+              <img
+                src={asset("media/application-feed.webp")}
+                width="780"
+                height="1688"
+                alt="Fil d’actualité du prototype Flutter Amonarc, avec une publication et sa navigation"
+                loading="lazy"
+              />
+              <figcaption>Fil d’actualité · Prototype Flutter · Interface susceptible d’évoluer</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section className="invest-teaser section-shell" data-reveal>
+          <div className="invest-teaser-inner">
+            <div><p className="eyebrow light">Investisseurs & partenaires</p><h2>Le prochain chapitre du commerce africain.<br /><span>Écrivons-le ensemble.</span></h2><p>Nous développons Amonarc, une nouvelle expérience de commerce portée par les communautés. Nous recherchons des partenaires pour transformer cette vision en une entreprise durable.</p></div>
+            <Link to="/investisseurs" className="button investor-cta">Découvrir l’opportunité <FiArrowUpRight aria-hidden /></Link>
+          </div>
+        </section>
+
+        <section className="faq-section section-shell">
+          <div>
+            <p className="eyebrow">Quelques réponses</p>
+            <h2>
+              Avant de
+              <br />
+              <span>se lancer.</span>
+            </h2>
+          </div>
+          <div className="faq-list">
+            {faqs.map(([question, answer]) => (
+              <details key={question}>
+                <summary>
+                  {question}
+                  <FiPlus className="faq-plus" aria-hidden />
+                  <FiMinus className="faq-minus" aria-hidden />
+                </summary>
+                <p>{answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <section className="contact-section" id="contact">
+          <div className="section-shell contact-layout">
+            <div>
+              <p className="eyebrow">05 / Et maintenant ?</p>
+              <h2>
+                Une idée ?<br />
+                <span>Parlons-en.</span>
+              </h2>
+              <p>
+                Vous représentez une organisation ou vous portez un projet
+                personnel ? Donnez-nous le point de départ.
+              </p>
+              <a className="contact-phone" href="tel:+2250797704542">
+                +225 07 97 70 45 42 <FiArrowUpRight aria-hidden />
+              </a>
+              <a className="second-phone" href="tel:+2250712450586">
+                +225 07 12 45 05 86
+              </a>
+            </div>
+            <ContactForm />
+          </div>
+        </section>
+      </main>
+      <footer className="site-footer section-shell">
+        <div className="footer-top">
+          <Link to="/" className="brand">
+            <img
+              src={asset("media/amonarc-logo.png")}
+              alt="Amonarc"
+              width="186"
+              height="47"
+            />
+          </Link>
+          <p>Voir nouveau. Voir loin.</p>
+          <a
+            href="https://www.facebook.com/amonarc"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Facebook <FiArrowUpRight aria-hidden />
+          </a>
         </div>
-      </section>
-      
-      <section className="chatgpt">
-        <h1>Pourquoi choisir <br /><span>Amonarc</span></h1>
-          <div className="row">
-            <div className="commencer">
-            
-            <a href="https://chat.openai.com/?q=Pourquoi%20choisir%20Amonak%20en%20tant%20que%20%3A%20entreprise%2C%20vendeur%20en%20ligne%2C%20acheteur%20en%20ligne%2C%20investisseurs%20%3F" target="_blank">  <AiFillOpenAI size={27} /> Demander à ChatGPT</a>
-          </div>
-          </div>
-      </section>
-
-      <section className="footers">
-
-        <footer>
-          <p>Nous devenons ce à quoi nous pensons.</p>
-          <div className="footers-icons">
-            <a href="https://www.facebook.com/Seenew.seefar"><FaFacebook size={20} /></a>
-            <a href="https://www.linkedin.com/company/amonak/posts/?feedView=all"><TbBrandLinkedinFilled size={20} /></a>
-            <a href="#"><AiFillTikTok size={20} /></a>
-
-          </div>
-          <p>Amonak &copy; 2026</p>
-        </footer>
-
-
-      </section>
-    </>
-  )
+        <div className="footer-bottom">
+          <span>
+            © {new Date().getFullYear()} Amonarc · Anciennement Amonak
+          </span>
+          <span>Services informatiques · Création · Communication</span>
+          <Link to="/investisseurs">
+            Espace investisseurs <FiArrowUpRight aria-hidden />
+          </Link>
+        </div>
+      </footer>
+    </div>
+  );
 }
-
-function App(): JSX.Element {
+export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/investisseurs" element={<Investisseur />} />
+      <Route
+        path="/investisseurs"
+        element={
+          <div className="investor-page">
+            <Suspense fallback={<p className="route-loading" role="status">Ouverture de l’espace investisseurs…</p>}><Investisseur /></Suspense>
+          </div>
+        }
+      />
+      <Route
+        path="*"
+        element={
+          <div className="corporate not-found">
+            <h1>Cette page n’existe pas.</h1>
+            <Link className="button primary" to="/">
+              Retour à l’accueil <FiArrowRight />
+            </Link>
+          </div>
+        }
+      />
     </Routes>
-  )
+  );
 }
-export default App
