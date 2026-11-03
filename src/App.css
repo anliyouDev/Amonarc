@@ -7,7 +7,7 @@
   color: var(--ink);
   background: #fff;
   font-family: Inter, "Segoe UI", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 17.5px;
   line-height: 1.6;
   overflow: clip;
 }
@@ -97,7 +97,7 @@
   background: none;
   border: 0;
   padding: 8px 0;
-  font-size: 13px;
+  font-size: 14.5px;
   font-weight: 550;
   color: #565160;
   white-space: nowrap;
@@ -113,11 +113,11 @@
   border: 1px solid var(--line);
   border-radius: 6px;
   background: white;
-  font-size: 13px;
+  font-size: 14.5px;
   font-weight: 600;
 }
 .corporate .nav-contact svg {
-  font-size: 19px;
+  font-size: 21px;
 }
 .corporate .menu-toggle {
   display: none;
@@ -125,7 +125,7 @@
   background: white;
   border-radius: 5px;
   padding: 9px;
-  font-size: 22px;
+  font-size: 24px;
   line-height: 0;
 }
 .corporate .hero {
@@ -152,7 +152,7 @@
 }
 .corporate .eyebrow {
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.18em;
   font-weight: 650;
   margin-bottom: 25px;
@@ -171,7 +171,7 @@
   flex-shrink: 0;
 }
 .corporate h1 {
-  font-size: clamp(53px, 5.1vw, 76px);
+  font-size: clamp(55.5px, 5.1vw, 80px);
   letter-spacing: -0.065em;
   line-height: 1.075;
   font-weight: 550;
@@ -183,7 +183,7 @@
 }
 .corporate .hero-description {
   max-width: 470px;
-  font-size: 16px;
+  font-size: 17.5px;
   line-height: 1.8;
   color: var(--muted);
   margin-top: 27px;
@@ -203,7 +203,7 @@
   padding: 15px 22px;
   border-radius: 6px;
   border: 0;
-  font-size: 13px;
+  font-size: 14.5px;
   font-weight: 600;
   line-height: 1.5;
   transition:
@@ -219,7 +219,7 @@
   transform: translateY(-2px);
 }
 .corporate .button svg {
-  font-size: 19px;
+  font-size: 21px;
   flex-shrink: 0;
 }
 .corporate .text-button {
@@ -229,7 +229,7 @@
   gap: 12px;
   border: 0;
   background: none;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   padding: 5px 0;
 }
@@ -237,14 +237,14 @@
   color: var(--purple);
 }
 .corporate .text-button svg {
-  font-size: 19px;
+  font-size: 21px;
   flex-shrink: 0;
 }
 .corporate .hero-meta {
   display: flex;
   gap: 12px;
   align-items: center;
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 38px;
   color: #8c8798;
 }
@@ -269,7 +269,7 @@
 .corporate .media-topline {
   display: flex;
   justify-content: space-between;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.15em;
   color: #8b849b;
   font-weight: 650;
@@ -303,7 +303,7 @@
   border: 1px solid #ffffff44;
   display: grid;
   place-items: center;
-  font-size: 21px;
+  font-size: 23px;
   box-shadow: 0 6px 25px #0002;
 }
 .corporate .video-play svg {
@@ -320,7 +320,7 @@
   padding-top: 17px;
 }
 .corporate .video-caption > span {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
 }
 .corporate .video-caption button {
@@ -330,7 +330,7 @@
   border: 0;
   background: none;
   color: #71697d;
-  font-size: 10px;
+  font-size: 11px;
 }
 .corporate .media-note {
   display: flex;
@@ -350,10 +350,10 @@
   display: grid;
   place-items: center;
   color: var(--purple);
-  font-size: 25px;
+  font-size: 27.5px;
 }
 .corporate .media-note p {
-  font-size: 11px;
+  font-size: 12px;
   color: #938a9e;
   line-height: 1.7;
 }
@@ -362,7 +362,7 @@
   color: #62596e;
 }
 .corporate .video-fallback {
-  font-size: 12px;
+  font-size: 13px;
   color: #a02848;
   margin-top: 12px;
 }
@@ -377,7 +377,7 @@
   margin-bottom: 38px;
 }
 .corporate .reference-heading h2 {
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.4;
   font-weight: 550;
   letter-spacing: -0.03em;
@@ -387,7 +387,7 @@
 }
 .corporate .reference-heading p {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   text-align: right;
 }
 .corporate .logo-grid {
@@ -425,7 +425,7 @@
   opacity: 1;
 }
 .corporate .logo-grid figcaption {
-  font-size: 9px;
+  font-size: 10px;
   color: #9991a3;
 }
 .corporate .expertise-section {
@@ -443,7 +443,7 @@
   margin-bottom: 19px;
 }
 .corporate h2 {
-  font-size: clamp(32px, 3.5vw, 48px);
+  font-size: clamp(33.5px, 3.5vw, 50.5px);
   letter-spacing: -0.05em;
   line-height: 1.15;
   font-weight: 550;
@@ -453,7 +453,7 @@
 }
 .corporate .section-heading > p {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
   padding-bottom: 5px;
 }
 .corporate .expertise-layout {
@@ -478,14 +478,14 @@
   padding: 16px 12px;
 }
 .corporate .expertise-tabs button > svg:not(.tab-arrow) {
-  font-size: 19px;
+  font-size: 21px;
 }
 .corporate .expertise-tabs button > span:not(.service-num) {
-  font-size: 14px;
+  font-size: 15.5px;
   flex: 1;
 }
 .corporate .service-num {
-  font-size: 9px;
+  font-size: 10px;
   color: #a69cb2;
   letter-spacing: 0.08em;
 }
@@ -499,7 +499,7 @@
   color: #7d66bc;
 }
 .corporate .tab-arrow {
-  font-size: 20px;
+  font-size: 22px;
   color: #b0a5bd;
 }
 .corporate .service-panel {
@@ -527,7 +527,7 @@
   border-radius: 25px;
   transform: rotate(-10deg);
   color: #7960c9;
-  font-size: 38px;
+  font-size: 40px;
   box-shadow: 0 20px 40px -20px #9f86db;
 }
 .corporate .illustration-icon svg {
@@ -569,21 +569,21 @@
   animation: panel-in 0.25s ease-out;
 }
 .corporate .micro-label {
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 600;
   color: #8e7ca4;
 }
 .corporate .service-detail h3 {
-  font-size: 26px;
+  font-size: 28.5px;
   line-height: 1.3;
   letter-spacing: -0.04em;
   font-weight: 550;
   margin-top: 16px;
 }
 .corporate .service-detail > p:not(.micro-label) {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.85;
   color: var(--muted);
   margin-top: 16px;
@@ -592,7 +592,7 @@
   list-style: none;
   padding: 0;
   margin: 21px 0;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 2.5;
   color: #6c617b;
 }
@@ -605,7 +605,7 @@
   color: #9a85bc;
 }
 .corporate .service-detail .text-button {
-  font-size: 11px;
+  font-size: 12px;
 }
 .corporate .projects {
   padding-block: 95px;
@@ -643,26 +643,26 @@
   position: absolute;
   top: 12px;
   left: 14px;
-  font-size: 9px;
+  font-size: 10px;
   color: #9a8eab;
 }
 .corporate .project-info {
   padding: 23px 1px 0;
 }
 .corporate .project-info h3 {
-  font-size: 23px;
+  font-size: 25.5px;
   letter-spacing: -0.035em;
   font-weight: 550;
   margin-top: 7px;
 }
 .corporate .project-info > p:last-child {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
   margin-top: 8px;
   max-width: 290px;
 }
 .corporate .source-note {
-  font-size: 10px;
+  font-size: 11px;
   color: #a39aa9;
   margin-top: 30px;
 }
@@ -681,13 +681,13 @@
   color: #b5a5cc;
 }
 .corporate .approach-layout h2 {
-  font-size: 43px;
+  font-size: 45px;
 }
 .corporate .approach-layout h2 span {
   color: #bba6d7;
 }
 .corporate .approach-intro {
-  font-size: 13px;
+  font-size: 14.5px;
   line-height: 1.8;
   color: #a99db6;
   max-width: 370px;
@@ -709,7 +709,7 @@
   padding-top: 0;
 }
 .corporate .process-list li > span {
-  font-size: 10px;
+  font-size: 11px;
   color: #8f7ba7;
   padding-top: 6px;
 }
@@ -717,12 +717,12 @@
   flex: 1;
 }
 .corporate .process-list h3 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
   letter-spacing: -0.02em;
 }
 .corporate .process-list p {
-  font-size: 12px;
+  font-size: 13px;
   color: #a99db6;
   max-width: 340px;
   margin-top: 6px;
@@ -760,7 +760,7 @@
   width: 150px;
 }
 .corporate .rebrand > span {
-  font-size: 10px;
+  font-size: 11px;
   color: #aaa1b4;
   display: flex;
   align-items: center;
@@ -768,11 +768,11 @@
 }
 .corporate .history-intro h3 {
   font-weight: 550;
-  font-size: 21px;
+  font-size: 23px;
   letter-spacing: -0.03em;
 }
 .corporate .history-intro p {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.9;
   color: var(--muted);
   margin-top: 15px;
@@ -788,7 +788,7 @@
   padding-right: 25px;
 }
 .corporate .timeline-year {
-  font-size: 28px;
+  font-size: 31px;
   color: #76628e;
   letter-spacing: -0.04em;
 }
@@ -809,12 +809,12 @@
   left: 0;
 }
 .corporate .timeline h3 {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.5;
 }
 .corporate .timeline p {
-  font-size: 11px;
+  font-size: 12px;
   color: #92869b;
   line-height: 1.75;
   margin-top: 10px;
@@ -827,7 +827,7 @@
   padding: 25px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  font-size: 11px;
+  font-size: 12px;
 }
 .corporate .founder-note > span:first-child {
   max-width: 120px;
@@ -841,10 +841,10 @@
 .corporate .founder-note > span:last-child {
   margin-left: auto;
   color: #6b5e7b;
-  font-size: 11px;
+  font-size: 12px;
 }
 .corporate .founder-note strong {
-  font-size: 9px;
+  font-size: 10px;
   color: #9b8ca9;
   font-weight: 400;
 }
@@ -863,14 +863,14 @@
   gap: 40px;
 }
 .corporate .app-banner h2 {
-  font-size: 39px;
+  font-size: 41px;
 }
 .corporate .app-banner > div:first-child {
   padding-bottom: 50px;
   z-index: 1;
 }
 .corporate .app-banner p:not(.eyebrow) {
-  font-size: 12px;
+  font-size: 13px;
   color: #8b7e99;
   max-width: 390px;
   margin-top: 22px;
@@ -880,7 +880,7 @@
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 10px;
+  font-size: 11px;
   color: #78668d;
   margin-top: 22px;
 }
@@ -929,7 +929,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  font-size: 13px;
+  font-size: 14.5px;
   font-weight: 550;
 }
 .corporate .faq-list summary::-webkit-details-marker {
@@ -947,7 +947,7 @@
   display: block;
 }
 .corporate .faq-list details > p {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
   padding-top: 17px;
   line-height: 1.9;
@@ -963,10 +963,10 @@
   gap: 100px;
 }
 .corporate .contact-layout h2 {
-  font-size: 65px;
+  font-size: 68.5px;
 }
 .corporate .contact-layout > div > p:not(.eyebrow) {
-  font-size: 13px;
+  font-size: 14.5px;
   color: var(--muted);
   max-width: 330px;
   margin-top: 25px;
@@ -975,17 +975,17 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  font-size: 23px;
+  font-size: 25.5px;
   font-weight: 500;
   letter-spacing: -0.035em;
   margin-top: 38px;
 }
 .corporate .contact-phone svg {
-  font-size: 22px;
+  font-size: 24px;
 }
 .corporate .second-phone {
   display: block;
-  font-size: 15px;
+  font-size: 16.5px;
   margin-top: 10px;
   color: #8a7c99;
 }
@@ -993,7 +993,7 @@
   display: inline-flex;
   gap: 9px;
   align-items: center;
-  font-size: 11px;
+  font-size: 12px;
   margin-top: 35px;
   color: #82718f;
 }
@@ -1011,7 +1011,7 @@
   display: flex;
   flex-direction: column;
   gap: 9px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   color: #83718f;
 }
@@ -1021,7 +1021,7 @@
   border: 1px solid #e1d9e9;
   border-radius: 5px;
   padding: 14px 12px;
-  font-size: 12px;
+  font-size: 13px;
   background: #ffffffb3;
   color: var(--ink);
   width: 100%;
@@ -1036,7 +1036,7 @@
   color: #a99db5;
 }
 .corporate .contact-form .form-note {
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.8;
   color: #a195ad;
   margin-top: -4px;
@@ -1050,7 +1050,7 @@
   border: 1px solid #d7ccec;
   background: #fff;
   border-radius: 7px;
-  font-size: 12px;
+  font-size: 13px;
 }
 .corporate .request-ready p {
   margin-bottom: 13px;
@@ -1067,11 +1067,11 @@
   padding-bottom: 35px;
 }
 .corporate .footer-top > p {
-  font-size: 14px;
+  font-size: 15.5px;
   color: #897a9b;
 }
 .corporate .footer-top > a:last-child {
-  font-size: 11px;
+  font-size: 12px;
   display: flex;
   align-items: center;
   gap: 7px;
@@ -1082,7 +1082,7 @@
   display: flex;
   justify-content: space-between;
   gap: 25px;
-  font-size: 9px;
+  font-size: 10px;
   color: #a89caf;
 }
 .corporate .footer-bottom a {
@@ -1125,10 +1125,10 @@
     gap: 15px;
   }
   .corporate .desktop-nav button {
-    font-size: 12px;
+    font-size: 13px;
   }
   .corporate .nav-contact {
-    font-size: 11px;
+    font-size: 12px;
     padding: 11px;
   }
   .corporate .hero {
@@ -1137,13 +1137,13 @@
     padding-bottom: 65px;
   }
   .corporate h1 {
-    font-size: 58px;
+    font-size: 61px;
   }
   .corporate .hero-description {
-    font-size: 14px;
+    font-size: 15.5px;
   }
   .corporate .hero-meta {
-    font-size: 9px;
+    font-size: 10px;
     flex-wrap: wrap;
   }
   .corporate .hero-media {
@@ -1158,11 +1158,11 @@
     gap: 15px;
   }
   .corporate .hero .button {
-    font-size: 11px;
+    font-size: 12px;
     padding: 14px;
   }
   .corporate .hero .text-button {
-    font-size: 11px;
+    font-size: 12px;
   }
   .corporate .expertise-layout {
     gap: 25px;
@@ -1177,13 +1177,13 @@
     padding-right: 25px;
   }
   .corporate .service-detail h3 {
-    font-size: 24px;
+    font-size: 26.5px;
   }
   .corporate .approach-layout {
     gap: 60px;
   }
   .corporate .approach-layout h2 {
-    font-size: 35px;
+    font-size: 37px;
   }
   .corporate .history-intro {
     gap: 35px;
@@ -1195,7 +1195,7 @@
     padding: 45px 45px 0;
   }
   .corporate .app-banner h2 {
-    font-size: 32px;
+    font-size: 33.5px;
   }
   .corporate .faq-section {
     gap: 55px;
@@ -1230,7 +1230,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 14px;
+    font-size: 15.5px;
   }
   .corporate .hero {
     grid-template-columns: 1fr;
@@ -1241,7 +1241,7 @@
     max-width: 600px;
   }
   .corporate h1 {
-    font-size: clamp(52px, 8vw, 70px);
+    font-size: clamp(54.5px, 8vw, 73.5px);
   }
   .corporate .hero-description {
     max-width: 500px;
@@ -1253,7 +1253,7 @@
     transform: none;
   }
   .corporate .hero-meta {
-    font-size: 10px;
+    font-size: 11px;
     margin-top: 30px;
   }
   .corporate .logo-grid {
@@ -1284,7 +1284,7 @@
     gap: 13px;
   }
   .corporate .expertise-tabs button > span:not(.service-num) {
-    font-size: 13px;
+    font-size: 14.5px;
   }
   .corporate .service-panel {
     grid-template-columns: 0.65fr 1fr;
@@ -1310,13 +1310,13 @@
     padding: 28px 18px 0;
   }
   .corporate .project-info h3 {
-    font-size: 20px;
+    font-size: 22px;
   }
   .corporate .project-info > p:last-child {
-    font-size: 11px;
+    font-size: 12px;
   }
   .corporate .project-info .micro-label {
-    font-size: 8px;
+    font-size: 9px;
   }
   .corporate .approach-layout {
     grid-template-columns: 1fr;
@@ -1326,7 +1326,7 @@
     max-width: 500px;
   }
   .corporate .approach-layout h2 {
-    font-size: 40px;
+    font-size: 42px;
   }
   .corporate .process-list p {
     max-width: 520px;
@@ -1364,10 +1364,10 @@
     max-width: 100%;
   }
   .corporate .app-banner h2 {
-    font-size: 28px;
+    font-size: 31px;
   }
   .corporate .app-banner .eyebrow {
-    font-size: 9px;
+    font-size: 10px;
   }
   .corporate .faq-section {
     grid-template-columns: 1fr;
@@ -1378,7 +1378,7 @@
     gap: 45px;
   }
   .corporate .contact-layout h2 {
-    font-size: 60px;
+    font-size: 63px;
   }
   .corporate .contact-layout > div > p:not(.eyebrow) {
     max-width: 480px;
@@ -1427,15 +1427,15 @@
     padding-bottom: 45px;
   }
   .corporate h1 {
-    font-size: 51px;
+    font-size: 53.5px;
     letter-spacing: -0.065em;
   }
   .corporate .eyebrow {
-    font-size: 9px;
+    font-size: 10px;
     margin-bottom: 22px;
   }
   .corporate .hero-description {
-    font-size: 13px;
+    font-size: 14.5px;
     margin-top: 22px;
   }
   .corporate .button-row {
@@ -1443,7 +1443,7 @@
     gap: 14px;
   }
   .corporate .hero-meta {
-    font-size: 9px;
+    font-size: 10px;
     gap: 9px;
     line-height: 1.8;
   }
@@ -1457,14 +1457,14 @@
     padding: 14px;
   }
   .corporate .media-topline {
-    font-size: 8px;
+    font-size: 9px;
     margin-bottom: 13px;
   }
   .corporate .video-caption > span {
-    font-size: 10px;
+    font-size: 11px;
   }
   .corporate .video-caption button {
-    font-size: 9px;
+    font-size: 10px;
   }
   .corporate .media-note {
     margin-inline: -14px;
@@ -1472,18 +1472,18 @@
     padding: 15px;
   }
   .corporate .media-note p {
-    font-size: 10px;
+    font-size: 11px;
   }
   .corporate .video-play {
     width: 45px;
     height: 45px;
-    font-size: 18px;
+    font-size: 20px;
   }
   .corporate .reference-heading h2 {
-    font-size: 18px;
+    font-size: 20px;
   }
   .corporate .reference-heading p {
-    font-size: 9px;
+    font-size: 10px;
     max-width: 125px;
   }
   .corporate .references {
@@ -1500,10 +1500,10 @@
     justify-self: center;
   }
   .corporate .logo-grid figcaption {
-    font-size: 8px;
+    font-size: 9px;
   }
   .corporate h2 {
-    font-size: 31px;
+    font-size: 32.5px;
   }
   .corporate .section-heading {
     margin-bottom: 30px;
@@ -1520,18 +1520,18 @@
     min-height: 67px;
   }
   .corporate .expertise-tabs button > span:not(.service-num) {
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.4;
   }
   .corporate .expertise-tabs button > svg:not(.tab-arrow) {
-    font-size: 16px;
+    font-size: 17.5px;
     flex-shrink: 0;
   }
   .corporate .service-num {
     display: none;
   }
   .corporate .tab-arrow {
-    font-size: 15px;
+    font-size: 16.5px;
     flex-shrink: 0;
   }
   .corporate .service-panel {
@@ -1548,11 +1548,11 @@
     padding: 0 25px 30px;
   }
   .corporate .service-detail h3 {
-    font-size: 25px;
+    font-size: 27.5px;
     margin-top: 10px;
   }
   .corporate .service-detail > p:not(.micro-label) {
-    font-size: 12px;
+    font-size: 13px;
   }
   .corporate .project-grid {
     grid-template-columns: 1fr;
@@ -1566,23 +1566,23 @@
     padding-top: 18px;
   }
   .corporate .project-info h3 {
-    font-size: 24px;
+    font-size: 26.5px;
   }
   .corporate .project-info .micro-label {
-    font-size: 9px;
+    font-size: 10px;
   }
   .corporate .project-info > p:last-child {
     max-width: none;
-    font-size: 12px;
+    font-size: 13px;
   }
   .corporate .approach-section {
     padding-block: 60px;
   }
   .corporate .approach-layout h2 {
-    font-size: 33px;
+    font-size: 34.5px;
   }
   .corporate .approach-intro {
-    font-size: 12px;
+    font-size: 13px;
   }
   .corporate .process-list li {
     gap: 18px;
@@ -1598,11 +1598,11 @@
     gap: 10px;
   }
   .corporate .rebrand > span {
-    font-size: 9px;
+    font-size: 10px;
     gap: 5px;
   }
   .corporate .history-intro h3 {
-    font-size: 20px;
+    font-size: 22px;
   }
   .corporate .timeline {
     grid-template-columns: 1fr;
@@ -1615,7 +1615,7 @@
     margin-left: 5px;
   }
   .corporate .timeline-year {
-    font-size: 24px;
+    font-size: 26.5px;
   }
   .corporate .timeline-point {
     height: 0;
@@ -1631,7 +1631,7 @@
   .corporate .timeline p {
     max-width: 280px;
     margin-top: 6px;
-    font-size: 12px;
+    font-size: 13px;
   }
   .corporate .timeline article:last-child {
     padding-bottom: 0;
@@ -1654,7 +1654,7 @@
     padding-bottom: 10px;
   }
   .corporate .app-banner h2 {
-    font-size: 30px;
+    font-size: 33px;
   }
   .corporate .phone-stage {
     height: 245px;
@@ -1670,38 +1670,38 @@
     top: 10px;
   }
   .corporate .faq-list summary {
-    font-size: 12px;
+    font-size: 13px;
   }
   .corporate .contact-section {
     padding-block: 60px;
   }
   .corporate .contact-layout h2 {
-    font-size: 54px;
+    font-size: 56.5px;
   }
   .corporate .form-row {
     grid-template-columns: 1fr;
   }
   .corporate .contact-phone {
-    font-size: 23px;
+    font-size: 25.5px;
   }
   .corporate .contact-form label {
-    font-size: 11px;
+    font-size: 12px;
   }
   .corporate .contact-form input,
   .corporate .contact-form textarea,
   .corporate .contact-form select {
-    font-size: 16px;
+    font-size: 17.5px;
   }
   .corporate .footer-top {
     flex-wrap: wrap;
     gap: 22px;
   }
   .corporate .footer-top > p {
-    font-size: 12px;
+    font-size: 13px;
   }
   .corporate .footer-bottom {
     gap: 13px;
-    font-size: 8px;
+    font-size: 9px;
   }
   .corporate .footer-top > a:last-child {
     width: 100%;
@@ -1710,7 +1710,7 @@
     padding: 60px 20px;
   }
   .corporate .not-found h1 {
-    font-size: 38px;
+    font-size: 40px;
   }
 }
 /* Motion uses opacity/transform only. No continuous loops, canvas or added runtime. */
@@ -1721,29 +1721,29 @@
 @keyframes entrance{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 .corporate .button svg,.corporate .text-button svg{transition:transform .25s ease}
 @media(hover:hover){.corporate .button:hover svg,.corporate .text-button:hover svg{transform:translate(3px,-2px)}.corporate .thesis-card{transition:transform .25s ease}.corporate .thesis-card:hover{transform:translateY(-4px)}}
-.corporate .desktop-nav .nav-invest{color:var(--purple);font-weight:650;font-size:13px;padding:8px 0;white-space:nowrap}
+.corporate .desktop-nav .nav-invest{color:var(--purple);font-weight:650;font-size: 14.5px;padding:8px 0;white-space:nowrap}
 .corporate .mobile-invest{display:flex;justify-content:space-between;padding:14px 0;color:var(--purple);font-weight:650}
 .corporate .project-grid{grid-template-columns:1fr}
 .corporate .project-card{display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center;background:var(--soft);padding:32px;border-radius:14px}
-.corporate .project-info{padding:0 24px 0 0}.corporate .project-info h3{font-size:38px;margin:14px 0}
+.corporate .project-info{padding:0 24px 0 0}.corporate .project-info h3{font-size: 40px;margin:14px 0}
 .corporate .phone-stage{flex-direction:column;align-items:center;justify-content:center;padding:28px 0 22px;gap:22px}
 .corporate .phone-stage img{width:210px;height:auto;max-width:75%;transform:rotate(4deg);border:5px solid #231a39;border-radius:25px;filter:none;box-shadow:0 14px 30px #35204b22}
-.corporate .phone-stage figcaption{font-size:9px;line-height:1.6;text-align:center;color:#78668d;max-width:220px}
+.corporate .phone-stage figcaption{font-size: 10px;line-height:1.6;text-align:center;color:#78668d;max-width:220px}
 .corporate .invest-teaser{padding-block:0 90px}.corporate .invest-teaser-inner{background:linear-gradient(120deg,#241b3d,#403064);border-radius:14px;padding:54px 58px;color:white;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.corporate .invest-teaser h2{font-size:clamp(27px,3vw,40px);line-height:1.2;letter-spacing:-1.2px;margin:18px 0}.corporate .invest-teaser h2 span{color:#c7b7ff}.corporate .invest-teaser p:not(.eyebrow){max-width:670px;font-size:14px;color:#ded8ec;line-height:1.8}.corporate .investor-cta{background:#fff;color:#302144;white-space:nowrap;border:1px solid transparent}
-.corporate .form-trap{display:none!important}.corporate .optional{font-size:10px;font-weight:400;color:var(--muted)}.corporate .form-alternative{font-size:11px;line-height:1.8;color:var(--muted);margin-top:16px}.corporate .form-alternative a{text-decoration:underline;color:var(--purple)}
+.corporate .invest-teaser h2{font-size: clamp(29.5px,3vw,42px);line-height:1.2;letter-spacing:-1.2px;margin:18px 0}.corporate .invest-teaser h2 span{color:#c7b7ff}.corporate .invest-teaser p:not(.eyebrow){max-width:670px;font-size: 15.5px;color:#ded8ec;line-height:1.8}.corporate .investor-cta{background:#fff;color:#302144;white-space:nowrap;border:1px solid transparent}
+.corporate .form-trap{display:none!important}.corporate .optional{font-size: 11px;font-weight:400;color:var(--muted)}.corporate .form-alternative{font-size: 12px;line-height:1.8;color:var(--muted);margin-top:16px}.corporate .form-alternative a{text-decoration:underline;color:var(--purple)}
 .route-loading{padding:80px 24px;text-align:center;color:#6151d4;font-family:Arial,sans-serif}
-.corporate .regional-home{padding-block:0 88px}.corporate .regional-home h2{margin:15px 0 22px;font-size:clamp(28px,3.3vw,44px);line-height:1.2;letter-spacing:-1.2px}.corporate .regional-home h2 span,.regional-page h1 span,.regional-page h2 span{color:var(--purple)}.corporate .regional-home>p:not(.eyebrow){max-width:760px;color:var(--muted);font-size:15px;line-height:1.9}.corporate .regional-home .button-row{margin-top:28px}
+.corporate .regional-home{padding-block:0 88px}.corporate .regional-home h2{margin:15px 0 22px;font-size: clamp(31px,3.3vw,46px);line-height:1.2;letter-spacing:-1.2px}.corporate .regional-home h2 span,.regional-page h1 span,.regional-page h2 span{color:var(--purple)}.corporate .regional-home>p:not(.eyebrow){max-width:760px;color:var(--muted);font-size: 16.5px;line-height:1.9}.corporate .regional-home .button-row{margin-top:28px}
 .corporate .footer-bottom{flex-wrap:wrap}
-.regional-page .regional-back{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted)}
-.regional-page .regional-hero{padding-block:45px 75px}.regional-page .breadcrumbs{display:flex;gap:12px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-bottom:58px}.regional-page .breadcrumbs a{text-decoration:underline}
-.regional-page h1{font-size:clamp(38px,4.5vw,64px);line-height:1.12;letter-spacing:-2.5px;margin:22px 0 28px;max-width:950px}.regional-page .regional-lead{max-width:790px;font-size:18px;line-height:1.8;color:var(--muted);margin-bottom:30px}
-.regional-page .regional-section{padding-block:74px}.regional-page h2{font-size:clamp(28px,3vw,42px);line-height:1.2;letter-spacing:-1.3px;margin:15px 0 28px}.regional-page .regional-section>p:not(.eyebrow),.regional-page .regional-product p:not(.eyebrow){font-size:15px;line-height:1.9;color:var(--muted);max-width:850px;margin-bottom:22px}
-.regional-page .regional-service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin:34px 0}.regional-page .regional-service-grid article{border:1px solid var(--line);padding:30px;border-radius:12px}.regional-page h3{font-size:21px;line-height:1.4;margin-bottom:15px;letter-spacing:-.4px}.regional-page .regional-service-grid p,.regional-page .regional-steps p{font-size:14px;color:var(--muted);line-height:1.9}
-.regional-page .regional-region{background:var(--soft)}.regional-page .regional-note{font-size:11px!important;color:var(--muted);line-height:1.8;margin-top:22px}.regional-page .regional-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;padding-left:22px;margin:38px 0 0}.regional-page .regional-steps li{padding-left:8px}
-.regional-page .regional-product{display:grid;grid-template-columns:1.3fr .7fr;gap:80px;align-items:center;border-top:1px solid var(--line)}.regional-page .regional-product figure{background:#f0eaff;border-radius:18px;padding:32px;text-align:center}.regional-page .regional-product img{width:220px;height:auto;border:5px solid #231a39;border-radius:24px;display:block;margin:0 auto 20px}.regional-page figcaption{font-size:10px;color:var(--muted)}.regional-page .regional-footer{display:flex;gap:25px;flex-wrap:wrap;font-size:12px}
-@media(max-width:700px){.regional-page .regional-back{display:none}.regional-page .nav-inner{justify-content:space-between;gap:16px}.regional-page .nav-inner>.button{font-size:11px;padding:11px}.regional-page .brand img{width:135px}.regional-page .regional-hero{padding-block:30px 40px}.regional-page .breadcrumbs{margin-bottom:34px}.regional-page h1{letter-spacing:-1.6px}.regional-page .regional-lead{font-size:16px}.regional-page .regional-section{padding-block:50px}.regional-page .regional-service-grid,.regional-page .regional-product,.regional-page .regional-steps{grid-template-columns:1fr;gap:24px}.regional-page .regional-service-grid article{padding:24px}.corporate .regional-home{padding-bottom:60px}}
-.corporate .form-feedback{margin-top:18px;padding:15px;border:1px solid #c9dfd1;background:#f2faf5;border-radius:6px;font-size:12px;color:#245736}
+.regional-page .regional-back{margin-left:auto;display:flex;align-items:center;gap:10px;font-size: 14.5px;color:var(--muted)}
+.regional-page .regional-hero{padding-block:45px 75px}.regional-page .breadcrumbs{display:flex;gap:12px;flex-wrap:wrap;font-size: 12px;color:var(--muted);margin-bottom:58px}.regional-page .breadcrumbs a{text-decoration:underline}
+.regional-page h1{font-size: clamp(40px,4.5vw,67px);line-height:1.12;letter-spacing:-2.5px;margin:22px 0 28px;max-width:950px}.regional-page .regional-lead{max-width:790px;font-size: 20px;line-height:1.8;color:var(--muted);margin-bottom:30px}
+.regional-page .regional-section{padding-block:74px}.regional-page h2{font-size: clamp(31px,3vw,44px);line-height:1.2;letter-spacing:-1.3px;margin:15px 0 28px}.regional-page .regional-section>p:not(.eyebrow),.regional-page .regional-product p:not(.eyebrow){font-size: 16.5px;line-height:1.9;color:var(--muted);max-width:850px;margin-bottom:22px}
+.regional-page .regional-service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin:34px 0}.regional-page .regional-service-grid article{border:1px solid var(--line);padding:30px;border-radius:12px}.regional-page h3{font-size: 23px;line-height:1.4;margin-bottom:15px;letter-spacing:-.4px}.regional-page .regional-service-grid p,.regional-page .regional-steps p{font-size: 15.5px;color:var(--muted);line-height:1.9}
+.regional-page .regional-region{background:var(--soft)}.regional-page .regional-note{font-size: 12px!important;color:var(--muted);line-height:1.8;margin-top:22px}.regional-page .regional-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;padding-left:22px;margin:38px 0 0}.regional-page .regional-steps li{padding-left:8px}
+.regional-page .regional-product{display:grid;grid-template-columns:1.3fr .7fr;gap:80px;align-items:center;border-top:1px solid var(--line)}.regional-page .regional-product figure{background:#f0eaff;border-radius:18px;padding:32px;text-align:center}.regional-page .regional-product img{width:220px;height:auto;border:5px solid #231a39;border-radius:24px;display:block;margin:0 auto 20px}.regional-page figcaption{font-size: 11px;color:var(--muted)}.regional-page .regional-footer{display:flex;gap:25px;flex-wrap:wrap;font-size: 13px}
+@media(max-width:700px){.regional-page .regional-back{display:none}.regional-page .nav-inner{justify-content:space-between;gap:16px}.regional-page .nav-inner>.button{font-size: 12px;padding:11px}.regional-page .brand img{width:135px}.regional-page .regional-hero{padding-block:30px 40px}.regional-page .breadcrumbs{margin-bottom:34px}.regional-page h1{letter-spacing:-1.6px}.regional-page .regional-lead{font-size: 17.5px}.regional-page .regional-section{padding-block:50px}.regional-page .regional-service-grid,.regional-page .regional-product,.regional-page .regional-steps{grid-template-columns:1fr;gap:24px}.regional-page .regional-service-grid article{padding:24px}.corporate .regional-home{padding-bottom:60px}}
+.corporate .form-feedback{margin-top:18px;padding:15px;border:1px solid #c9dfd1;background:#f2faf5;border-radius:6px;font-size: 13px;color:#245736}
 .corporate .form-error{border-color:#e4cdba;background:#fff8f0;color:#7b4825}
 .corporate .button:disabled{opacity:.6;cursor:wait}
 .corporate .form-fields{border:0;padding:0;margin:0;min-width:0;display:flex;flex-direction:column;gap:20px}.corporate .form-fields>.button{align-self:flex-start;margin-top:7px}

@@ -20,6 +20,7 @@ const Investisseur = lazy(() => import("./investisseur"));
 import ContactForm from "./ContactForm";
 import useReveal from "./useReveal";
 import "./App.css";
+import "./animations.css";
 import Seo from './seo';
 const RegionalPages = lazy(() => import('./RegionalPages'));
 

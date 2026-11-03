@@ -1,0 +1,154 @@
+/* Light motion layer: opacity/transform only, no library, disabled with prefers-reduced-motion. */
+
+/* Scroll progress bar, pure CSS (ignored by browsers without scroll timelines) */
+@supports (animation-timeline: scroll()) {
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto;
+    height: 3px;
+    z-index: 100;
+    background: linear-gradient(90deg, #6151d4, #b787cc);
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    animation: scroll-progress linear both;
+    animation-timeline: scroll(root);
+    pointer-events: none;
+  }
+  @keyframes scroll-progress { to { transform: scaleX(1); } }
+}
+
+/* Hero: staggered entrance of the copy (replaces the block entrance), floating halo and phone */
+.corporate .hero-copy,
+.corporate .invest-hero-copy {
+  animation: none;
+}
+.corporate .hero-copy > *,
+.corporate .invest-hero-copy > * {
+  animation: entrance 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.corporate .hero-copy > :nth-child(2),
+.corporate .invest-hero-copy > :nth-child(2) { animation-delay: 0.08s; }
+.corporate .hero-copy > :nth-child(3),
+.corporate .invest-hero-copy > :nth-child(3) { animation-delay: 0.16s; }
+.corporate .hero-copy > :nth-child(4),
+.corporate .invest-hero-copy > :nth-child(4) { animation-delay: 0.24s; }
+.corporate .hero-copy > :nth-child(n + 5),
+.corporate .invest-hero-copy > :nth-child(n + 5) { animation-delay: 0.32s; }
+
+.corporate .hero-orb { animation: drift 14s ease-in-out infinite alternate; }
+.corporate .invest-product img { animation: float 6s ease-in-out 1s infinite; }
+.corporate .phone-orbit { animation: pulse-ring 5s ease-in-out infinite; }
+.corporate .status-dot { animation: dot-pulse 2.4s ease-out infinite; }
+
+@keyframes drift {
+  to { transform: translate(60px, 40px) scale(1.08); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes pulse-ring {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.04); opacity: 0.6; }
+}
+@keyframes dot-pulse {
+  0% { box-shadow: 0 0 0 0 #6151d455; }
+  100% { box-shadow: 0 0 0 9px #6151d400; }
+}
+
+/* Cards and lists of a revealed section follow in cascade */
+.corporate [data-reveal].is-visible :is(.thesis-card, .model-grid article, .invest-roadmap li, .regional-service-grid article, .regional-steps li, .faq-list details, .funding-layout li) {
+  animation: entrance 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.corporate [data-reveal].is-visible :is(.thesis-card, .model-grid article, .invest-roadmap li, .regional-service-grid article, .regional-steps li, .faq-list details, .funding-layout li):nth-child(2) { animation-delay: 0.08s; }
+.corporate [data-reveal].is-visible :is(.thesis-card, .model-grid article, .invest-roadmap li, .regional-service-grid article, .regional-steps li, .faq-list details, .funding-layout li):nth-child(3) { animation-delay: 0.16s; }
+.corporate [data-reveal].is-visible :is(.thesis-card, .model-grid article, .invest-roadmap li, .regional-service-grid article, .regional-steps li, .faq-list details, .funding-layout li):nth-child(n + 4) { animation-delay: 0.24s; }
+
+@media (hover: hover) {
+  /* Navigation: animated underline */
+  .corporate .desktop-nav button,
+  .corporate .desktop-nav a,
+  .corporate .back-home {
+    position: relative;
+  }
+  .corporate .desktop-nav button::after,
+  .corporate .desktop-nav a::after,
+  .corporate .back-home::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--purple);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .corporate .desktop-nav button:hover::after,
+  .corporate .desktop-nav a:hover::after,
+  .corporate .back-home:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Buttons: lift, shadow and light sweep */
+  .corporate .button,
+  .corporate .nav-contact {
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s, transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s;
+  }
+  .corporate .button:hover,
+  .corporate .nav-contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px #6151d42e;
+  }
+  .corporate .nav-contact:hover { border-color: #cfc7f0; }
+  .corporate .button::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 50%;
+    background: linear-gradient(110deg, transparent, #ffffff40, transparent);
+    transform: translateX(-130%);
+    pointer-events: none;
+  }
+  .corporate .button:hover::after {
+    transform: translateX(260%);
+    transition: transform 0.8s ease;
+  }
+
+  /* Cards: gentle lift */
+  .corporate .thesis-card,
+  .corporate .project-card,
+  .corporate .regional-service-grid article,
+  .corporate .app-banner {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .corporate .thesis-card:hover,
+  .corporate .project-card:hover,
+  .corporate .regional-service-grid article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 34px #29203c14;
+  }
+  .corporate .thesis-card > svg { transition: transform 0.4s ease; }
+  .corporate .thesis-card:hover > svg { transform: rotate(-8deg) scale(1.12); }
+
+  .corporate .logo-grid figure { transition: transform 0.3s ease; }
+  .corporate .logo-grid figure:hover { transform: translateY(-4px); }
+
+  .corporate .invest-roadmap li { transition: border-color 0.3s; }
+  .corporate .invest-roadmap li:hover { border-color: var(--purple); }
+  .corporate .roadmap-num { transition: color 0.3s, transform 0.3s ease; display: inline-block; }
+  .corporate .invest-roadmap li:hover .roadmap-num { color: var(--purple); transform: translateX(4px); }
+
+  .corporate .faq-list summary { transition: color 0.2s; }
+  .corporate .faq-list summary:hover { color: var(--purple); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before { display: none; }
+}
